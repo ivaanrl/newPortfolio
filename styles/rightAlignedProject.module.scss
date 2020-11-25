@@ -18,10 +18,16 @@
   flex-direction: row;
 }
 
-.image__container {
+.image__container_1 {
   position: absolute;
   bottom: calc(50% - 300px);
   right: 0;
+}
+
+.image__container_3 {
+  position: absolute;
+  bottom: 0;
+  right: 300px;
 }
 
 .text__container {
@@ -31,6 +37,11 @@
   align-items: flex-end;
   justify-content: space-around;
   margin-left: -500px;
+}
+
+.text__container_small {
+  @extend .text__container;
+  margin-left: -220px;
 }
 
 .technologies {
@@ -76,7 +87,7 @@
   border-image-source: linear-gradient(
     200.54deg,
     #000000 62.45%,
-    #aa3fff 62.46%
+    $main-color 62.46%
   );
 }
 
@@ -86,6 +97,6 @@
   border-image-source: linear-gradient(
     150.6deg,
     #000000 74.52%,
-    #aa3fff 75.11%
+    $main-color 75.11%
   );
 }

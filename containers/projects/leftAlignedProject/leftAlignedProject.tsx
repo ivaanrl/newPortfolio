@@ -1,24 +1,25 @@
-import styles from '../../../styles/firstProject.module.scss';
+import styles from '../../../styles/leftAlignedProject.module.scss';
 import Image from 'next/image';
 
-const FirstProject = () => {
+const LeftALignedProject = () => {
   return (
     <div className={styles.main__container}>
       <div className={styles.smaller_container}>
-        <div className={styles.image__container}>
+        <div className={styles.image__container_1}>
           <Image
-            height="600px"
-            width="1155px"
-            src="/images/first_project.png"
+            height="700px"
+            width="1000px"
+            src="/images/second_project.png"
             alt="rocketleagueairrace.com screenshot"
           />
         </div>
+
         <div className={styles.text__container}>
           <div className={styles.technologies}>
-            Frontend developer, UI, UX, Server Admin
+            FullStack Dev, React Native, <br /> Monorepo
           </div>
 
-          <div className={styles.title}>Rocketleagueairrace.com</div>
+          <div className={styles.title}>Reddit Clone</div>
           <button className={styles.see_more}>SEE MORE</button>
           <div className={styles.buttons__container}>
             <button className={styles.button__left}>CODE</button>
@@ -30,4 +31,4 @@ const FirstProject = () => {
   );
 };
 
-export default FirstProject;
+export default LeftALignedProject;

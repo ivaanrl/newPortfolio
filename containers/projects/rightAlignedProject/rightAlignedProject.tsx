@@ -24,8 +24,8 @@ const RightALignedProject = ({
         {project_number === 1 ? (
           <div className={styles.image__container_1}>
             <Image
-              height="600px"
-              width="1155px"
+              height="550px"
+              width="1000px"
               src="/images/first_project.png"
               alt="rocketleagueairrace.com screenshot"
             />

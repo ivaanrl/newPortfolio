@@ -1,0 +1,40 @@
+.navbar__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 100px;
+  padding-left: 100px;
+}
+
+.navbar__logo__container {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.navbar__right__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navbar__contact {
+  font-family: 'Montserrat';
+  font-weight: normal;
+  border: 1px solid black;
+  border-radius: 26px;
+  font-size: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-right: 30px;
+}
+
+.navbar__menu__toggle {
+  border-radius: 100%;
+  border: 1px solid black;
+  padding: 15px;
+}

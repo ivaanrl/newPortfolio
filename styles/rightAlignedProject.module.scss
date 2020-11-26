@@ -2,20 +2,24 @@
 
 .main__container {
   margin-top: 140px;
+  height: 80vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: flex-end;
   margin-bottom: 200px;
 }
 
 .smaller_container {
   height: 80vh;
   width: 65vw;
-  background-color: $secondary-color;
+  background-color: transparent;
   align-self: flex-end;
   margin-right: 60px;
   position: relative;
   display: flex;
   flex-direction: row;
+  background-color: $secondary-color;
 }
 
 .image__container_1 {
@@ -36,7 +40,9 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-around;
-  margin-left: -500px;
+  margin-left: 60px;
+  margin-right: -100px;
+  z-index: 2;
 }
 
 .text__container_small {
@@ -52,51 +58,4 @@
 .title {
   font-size: 52px;
   font-weight: bold;
-}
-
-.see_more {
-  font-size: 48px;
-  font-weight: normal;
-  background-color: transparent;
-  border: 7px solid;
-  padding: 7px;
-}
-
-.buttons__container {
-  background-color: $main-color;
-  padding: 30px;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.button {
-  background-color: transparent;
-  font-size: 30px;
-  font-weight: bold;
-  border: 7px solid;
-  border-image-slice: 1;
-}
-
-.button__left {
-  @extend .button;
-  margin-right: 50px;
-  border-image-source: linear-gradient(
-    200.54deg,
-    #000000 62.45%,
-    $main-color 62.46%
-  );
-}
-
-.button__right {
-  @extend .button;
-
-  border-image-source: linear-gradient(
-    150.6deg,
-    #000000 74.52%,
-    $main-color 75.11%
-  );
 }

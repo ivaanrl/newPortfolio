@@ -1,0 +1,36 @@
+@import './color_scheme';
+
+.main__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20px;
+  margin-bottom: 200px;
+}
+.title {
+  font-size: 60px;
+  font-weight: normal;
+  text-align: center;
+  margin-right: 70px;
+}
+.skill__container {
+  background-color: transparent;
+  border: 5px solid $secondary-color;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 205px;
+  width: 240px;
+
+  &:nth-child(2n + 1) {
+    border-right: none;
+    border-left: none;
+  }
+}
+.skill__title {
+  font-size: 36px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: $muted-text;
+}
+.skill_icon {
+}

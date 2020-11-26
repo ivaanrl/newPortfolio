@@ -1,8 +1,10 @@
 import styles from '../../styles/hero.module.scss';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
     <div className={styles.hero__container}>
+      <div className={styles.hero__secondary_background} />
       <div className={styles.hero__text_container}>
         <p className={styles.hero__text}>
           Web development <br />
@@ -18,7 +20,19 @@ const Hero = () => {
         <p className={styles.hero_text}>Creative</p>
         <br />
       </div>
-      <div className={styles.hero__scroll_indicator_container}>
+      <motion.div
+        className={styles.hero__scroll_indicator_container}
+        animate={{
+          translateY: [0, 20, 0],
+        }}
+        transition={{
+          duration: 1,
+          ease: 'easeInOut',
+          times: [0, 0.5, 1],
+          loop: Infinity,
+          repeatDelay: 1,
+        }}
+      >
         <svg
           width="32"
           height="84"
@@ -37,7 +51,7 @@ const Hero = () => {
           />
           <rect x="12" y="42" width="8" height="28" rx="4" fill="#AA3FFF" />
         </svg>
-      </div>
+      </motion.div>
     </div>
   );
 };

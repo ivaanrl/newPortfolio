@@ -122,6 +122,21 @@
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.1.0.tgz#6c9eafc78c1529248f8f4d92b0799a712b6052c6"
   integrity sha512-i9YbZPN3QgfighY/1X1Pu118VUz2Fmmhd6b2n0/O8YVgGGfw0FbUYoA97k7FkpGJ+pLCFEDLUmAPPV4D1kpeFw==
 
+"@iconify/icons-bx@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-bx/-/icons-bx-1.0.5.tgz#d4e327943dae7f8af3ca52f9cf66eb7eed3446fb"
+  integrity sha512-tKf5IOB8f1mtILlCPQ+nq12Mv6vUwwoM2iAWY3isuYEfuiGm1lIw3Q5Ccc3i5JveUKSdk2jNsRRhE9m+f8Qf+w==
+
+"@iconify/icons-fa-brands@^1.0.16":
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-fa-brands/-/icons-fa-brands-1.0.16.tgz#e92a2a6492b6bb5b4a5afd6bad319fb28b6beadc"
+  integrity sha512-ZcQ4Yto8KQz8EFmdvMOn6Rcn1/GUZU53cB3XN9HnT/eEQgS3SQIJiq22vbxd1977LgjhdgBRW81spVVvb11Pxw==
+
+"@iconify/react@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-1.1.3.tgz#ebe4d3e5f5dea23cd6a9634acd7a0a25c7414a59"
+  integrity sha512-ReZNJyr89AfED6XZIXkhsJiNv2taT3j1cTo1HVPHMsrKOz6gAYdXtD2kDWF6+GVoFUxpmnO0fMcA6yCyTf6Tow==
+
 "@next/env@10.0.3":
   version "10.0.3"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-10.0.3.tgz#ef1077d78bf500855576f83090d6fb1ec96272f8"

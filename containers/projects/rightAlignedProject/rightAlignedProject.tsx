@@ -1,5 +1,9 @@
 import styles from '../../../styles/rightAlignedProject.module.scss';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import CodeAndLiveButtons from '../codeAndLiveButtons/codeAndLiveButtons';
+import SeeMoreButton from '../seeMoreButton/seeMoreButton';
 
 interface Props {
   project_number: number;
@@ -18,44 +22,53 @@ const RightALignedProject = ({
   code_link,
   live_link,
 }: Props) => {
+  const [isHovering, setIsHovering] = useState<boolean>(false);
+
   return (
     <div className={styles.main__container}>
-      <div className={styles.smaller_container}>
+      <div
+        className={
+          big_name ? styles.text__container : styles.text__container_small
+        }
+      >
+        <div className={styles.technologies}>{technologies}</div>
+        <div className={styles.title}>{name}</div>
+        <SeeMoreButton />
+        <CodeAndLiveButtons />
+      </div>
+      <motion.div
+        whileHover={{ scale: 0.9 }}
+        className={styles.smaller_container}
+      >
         {project_number === 1 ? (
-          <div className={styles.image__container_1}>
+          <motion.div
+            onHoverStart={() => setIsHovering(true)}
+            onHoverEnd={() => setIsHovering(false)}
+            className={styles.image__container_1}
+          >
             <Image
               height="550px"
               width="1000px"
               src="/images/first_project.png"
               alt="rocketleagueairrace.com screenshot"
             />
-          </div>
+          </motion.div>
         ) : null}
         {project_number === 3 ? (
-          <div className={styles.image__container_3}>
+          <motion.div
+            onHoverStart={() => setIsHovering(true)}
+            onHoverEnd={() => setIsHovering(false)}
+            className={styles.image__container_3}
+          >
             <Image
               height="700px"
               width="350px"
               src="/images/third_project.png"
               alt="rocketleagueairrace.com screenshot"
             />
-          </div>
+          </motion.div>
         ) : null}
-        <div
-          className={
-            big_name ? styles.text__container : styles.text__container_small
-          }
-        >
-          <div className={styles.technologies}>{technologies}</div>
-
-          <div className={styles.title}>{name}</div>
-          <button className={styles.see_more}>SEE MORE</button>
-          <div className={styles.buttons__container}>
-            <button className={styles.button__left}>CODE</button>
-            <button className={styles.button__right}>LIVE SITE</button>
-          </div>
-        </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

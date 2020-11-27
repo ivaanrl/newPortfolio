@@ -1,5 +1,5 @@
 @import './color_scheme';
-
+@import './media_queries';
 .projects__container {
   width: 100%;
   margin-top: 140px;
@@ -8,8 +8,11 @@
 .projects__title {
   width: 100%;
   text-align: center;
-  font-size: 90px;
   font-weight: bold;
+
+  @include mquery(1100) {
+    font-size: 90px;
+  }
 }
 
 .github__button_container {
@@ -26,9 +29,4 @@
   border: 7px solid;
   border-image-slice: 1;
   font-weight: normal;
-  border-image-source: linear-gradient(
-    101.96deg,
-    $secondary-color 52.06%,
-    $main-color 104.61%
-  );
 }

@@ -1,8 +1,17 @@
 import styles from '../../styles/projects.module.scss';
 import LeftALignedProject from './leftAlignedProject/leftAlignedProject';
 import RightALignedProject from './rightAlignedProject/rightAlignedProject';
+import { motion, useViewportScroll } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 const Projects = () => {
+  const [angle, setAngle] = useState<number>(0);
+  const { scrollYProgress } = useViewportScroll();
+
+  useEffect(() => {
+    return scrollYProgress.onChange((v) => setAngle(v));
+  }, [scrollYProgress]);
+
   return (
     <>
       <div className={styles.projects__container}>
@@ -26,7 +35,25 @@ const Projects = () => {
         />
       </div>
       <div className={styles.github__button_container}>
-        <button className={styles.github__button}>GITHUB PROFILE</button>
+        <motion.button
+          animate={{
+            borderImageSource: `linear-gradient(
+              ${angle * 360}deg,
+              #ff77c9 ${angle * 100}%,
+              #aa3fff 100%
+            )`,
+          }}
+          whileHover={{
+            scale: 1.1,
+            backgroundColor: '#000000',
+            color: '#ffffff',
+            borderImageSource:
+              'linear-gradient(101.96deg,#000000 100%,#000000 100%)',
+          }}
+          className={styles.github__button}
+        >
+          GITHUB PROFILE
+        </motion.button>
       </div>
     </>
   );

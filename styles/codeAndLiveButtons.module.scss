@@ -1,4 +1,5 @@
 @import './color_scheme';
+@import './media_queries';
 
 .buttons__container {
   background-color: $main-color;
@@ -9,24 +10,51 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+
+  @include mquery(1100) {
+    padding: 15px;
+  }
 }
 
 .button {
   background-color: transparent;
-  font-size: 30px;
   font-weight: bold;
   border: 7px solid;
   border-image-slice: 1;
+  padding: 4px;
+
+  @include mquery(1100) {
+    font-size: 20px;
+  }
+
+  @include mquery(1330) {
+    font-size: 23px;
+  }
+
+  @include mquery(1600) {
+    font-size: 30px;
+  }
 }
 
 .button__left {
   @extend .button;
-  margin-right: 50px;
   border-image-source: linear-gradient(
     200.54deg,
     #000000 62.45%,
     $main-color 62.46%
   );
+
+  @include mquery(1100) {
+    margin-right: 30px;
+  }
+
+  @include mquery(1330) {
+    margin-right: 35px;
+  }
+
+  @include mquery(1600) {
+    margin-right: 50px;
+  }
 }
 
 .button__right {

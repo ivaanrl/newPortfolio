@@ -9,12 +9,15 @@
   },
   "dependencies": {
     "@iconify/icons-bx": "^1.0.5",
+    "@iconify/icons-eva": "^1.1.0",
     "@iconify/icons-fa-brands": "^1.0.16",
+    "@iconify/icons-gg": "^1.1.0",
     "@iconify/react": "^1.1.3",
     "framer-motion": "^2.9.4",
     "next": "10.0.3",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-use-measure": "^2.0.3",
     "sass": "^1.29.0"
   },
   "devDependencies": {

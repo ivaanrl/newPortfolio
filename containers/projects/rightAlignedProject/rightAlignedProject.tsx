@@ -47,10 +47,13 @@ const RightALignedProject = ({
             className={styles.image__container_1}
           >
             <Image
-              height="550px"
-              width="1000px"
+              loading="eager"
+              priority={true}
+              quality={100}
+              layout="fill"
               src="/images/first_project.png"
               alt="rocketleagueairrace.com screenshot"
+              className={styles.image__1}
             />
           </motion.div>
         ) : null}
@@ -61,6 +64,9 @@ const RightALignedProject = ({
             className={styles.image__container_3}
           >
             <Image
+              loading="eager"
+              priority={true}
+              quality={100}
               height="700px"
               width="350px"
               src="/images/third_project.png"

@@ -127,10 +127,20 @@
   resolved "https://registry.yarnpkg.com/@iconify/icons-bx/-/icons-bx-1.0.5.tgz#d4e327943dae7f8af3ca52f9cf66eb7eed3446fb"
   integrity sha512-tKf5IOB8f1mtILlCPQ+nq12Mv6vUwwoM2iAWY3isuYEfuiGm1lIw3Q5Ccc3i5JveUKSdk2jNsRRhE9m+f8Qf+w==
 
+"@iconify/icons-eva@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-eva/-/icons-eva-1.1.0.tgz#6d6dae59d766587e9034bbb782acca6c40ab4b0c"
+  integrity sha512-a2wCJw+6UebrsoJ2WhpHUcdr4PJljwk0tdu1GfpjzwVyiJBC7y6sc2h7as1npJPLwgMIc/q8YFJf5iFl7Ik3NA==
+
 "@iconify/icons-fa-brands@^1.0.16":
   version "1.0.16"
   resolved "https://registry.yarnpkg.com/@iconify/icons-fa-brands/-/icons-fa-brands-1.0.16.tgz#e92a2a6492b6bb5b4a5afd6bad319fb28b6beadc"
   integrity sha512-ZcQ4Yto8KQz8EFmdvMOn6Rcn1/GUZU53cB3XN9HnT/eEQgS3SQIJiq22vbxd1977LgjhdgBRW81spVVvb11Pxw==
+
+"@iconify/icons-gg@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-gg/-/icons-gg-1.1.0.tgz#ae6451fa5573304357248d84e310acaaf0b90b6e"
+  integrity sha512-AQ+1vmX0EdxfWFL51HUjZk+1WSm68zzEm/+D4DF/b/BAC/Lc2RamLd6n4z8h9phdugOI6W3u7FWSz08CPbVktg==
 
 "@iconify/react@^1.1.3":
   version "1.1.3"
@@ -1203,6 +1213,11 @@ data-uri-to-buffer@3.0.0:
   integrity sha512-MJ6mFTZ+nPQO+39ua/ltwNePXrfdF3Ww0wP1Od7EePySXN1cP9XNqRQOG3FxTfipp8jx898LUCgBCEP11Qw/ZQ==
   dependencies:
     buffer-from "^1.1.1"
+
+debounce@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/debounce/-/debounce-1.2.0.tgz#44a540abc0ea9943018dc0eaa95cce87f65cd131"
+  integrity sha512-mYtLl1xfZLi1m4RtQYlZgJUNQjl4ZxVnHzIR8nLLgi4q1YT8o/WM+MK/f8yfcc9s5Ir5zRaPZyZU6xs1Syoocg==
 
 debug@4:
   version "4.3.1"
@@ -3099,6 +3114,13 @@ react-refresh@0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
+
+react-use-measure@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/react-use-measure/-/react-use-measure-2.0.3.tgz#7b56ae3ca19ccf62326933678625a8ff6b3f90a3"
+  integrity sha512-57O8Os9MbgFEHuOHOXNdPmBHhXjCBIwtB3YxyrM/MgaX44a1o97Mu9YqiOA6cAF8kXIw4fO3XK0r2Taa4SqaqQ==
+  dependencies:
+    debounce "^1.2.0"
 
 react@17.0.1:
   version "17.0.1"

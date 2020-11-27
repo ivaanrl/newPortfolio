@@ -1,0 +1,43 @@
+@mixin mquery($size) {
+  @if $size == 1840 {
+    @media (min-width: 1840px) {
+      @content;
+    }
+  } @else if $size == 1600 {
+    @media (min-width: 1600px) {
+      @content;
+    }
+  } @else if $size == 1500 {
+    @media (min-width: 1500px) {
+      @content;
+    }
+  } @else if $size == 1330 {
+    @media (min-width: 1330px) {
+      @content;
+    }
+  } @else if $size == 1200 {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $size == 1100 {
+    @media (min-width: 1100px) {
+      @content;
+    }
+  } @else if $size == 600 {
+    @media (min-width: 600px) {
+      @content;
+    }
+  } @else if $size == 550 {
+    @media (min-width: 550px) {
+      @content;
+    }
+  } @else if $size == 440 {
+    @media (min-width: 440px) {
+      @content;
+    }
+  } @else if $size == 330 {
+    @media (min-width: 330px) {
+      @content;
+    }
+  }
+}

@@ -1,7 +1,22 @@
+@import './media_queries';
+
 .see_more {
-  font-size: 48px;
   font-weight: normal;
   background-color: transparent;
   border: 7px solid;
   padding: 7px;
+
+  @include mquery(1100) {
+    font-size: 26px;
+    padding: 5px;
+  }
+
+  @include mquery(1330) {
+    font-size: 30px;
+    padding: 7px;
+  }
+
+  @include mquery(1600) {
+    font-size: 48px;
+  }
 }

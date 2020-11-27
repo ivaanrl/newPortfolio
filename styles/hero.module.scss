@@ -1,23 +1,49 @@
 @import './color_scheme';
+@import './media_queries';
 
 .hero__container {
+  height: 100vh;
+  max-height: 600px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+
+  @include mquery(600) {
+    max-height: none;
+  }
 }
 
 .hero__text_container {
-  margin-top: 6%;
-  margin-bottom: 6%;
+  margin-top: 20%;
+  margin-bottom: 20%;
   width: 100%;
+
+  @include mquery(330) {
+    margin-top: 15%;
+    margin-bottom: 15%;
+  }
+
+  @include mquery(1100) {
+    margin-top: 6%;
+    margin-bottom: 6%;
+  }
   p {
     -moz-user-select: none;
     -webkit-user-select: none;
     text-align: center;
-    font-size: 90px;
     font-weight: bold;
+    font-size: 37px;
+
+    @include mquery(330) {
+      font-size: 45px;
+    }
+
+    @include mquery(1100) {
+      font-size: 90px;
+    }
+
     span {
       color: $main-color;
     }

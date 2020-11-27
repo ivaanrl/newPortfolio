@@ -1,4 +1,4 @@
-@import './color_scheme';
+/*@import './color_scheme';
 
 .container {
   height: 100vh;
@@ -26,6 +26,8 @@
   font-weight: bold;
   text-align: center;
   color: white;
+  margin-top: -180px;
+  line-height: 1.2em;
   span {
     color: $secondary-color;
   }
@@ -33,7 +35,7 @@
 
 .button {
   z-index: 2;
-  margin-top: 40px;
+  margin-top: 100px;
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 5px;
@@ -60,3 +62,4 @@
     cursor: pointer;
   }
 }
+*/

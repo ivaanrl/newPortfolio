@@ -1,18 +1,22 @@
 @import './color_scheme';
+@import './media_queries';
 
 .main__container {
   margin-top: 140px;
-  height: 80vh;
   width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   margin-bottom: 200px;
+
+  height: 60vh;
+
+  @include mquery(1840) {
+    height: 80vh;
+  }
 }
 
 .smaller_container {
-  height: 80vh;
-  width: 65vw;
   background-color: transparent;
   align-self: flex-end;
   margin-right: 60px;
@@ -20,12 +24,47 @@
   display: flex;
   flex-direction: row;
   background-color: $secondary-color;
+  overflow-y: hidden;
+
+  height: 100%;
+  width: 100%;
 }
 
 .image__container_1 {
   position: absolute;
-  bottom: calc(50% - 275px);
+  bottom: 0;
   right: 0;
+  aspect-ratio: 16/9;
+  bottom: 20px;
+
+  height: 80%;
+  width: 80%;
+
+  @include mquery(1200) {
+    bottom: 30px;
+  }
+
+  @include mquery(1330) {
+    bottom: 45px;
+  }
+
+  @include mquery(1500) {
+    bottom: 40px;
+  }
+
+  @include mquery(1600) {
+    width: 90%;
+    bottom: 40px;
+  }
+
+  @include mquery(1840) {
+    height: 85%;
+    width: 80%;
+    bottom: 60px;
+  }
+}
+
+.image__1 {
 }
 
 .image__container_3 {
@@ -41,21 +80,55 @@
   align-items: flex-end;
   justify-content: space-around;
   margin-left: 60px;
-  margin-right: -100px;
   z-index: 2;
+
+  @include mquery(1100) {
+    margin-right: -100px;
+  }
 }
 
 .text__container_small {
   @extend .text__container;
-  margin-left: -220px;
+
+  @include mquery(1100) {
+    margin-left: -220px;
+  }
 }
 
 .technologies {
-  font-size: 30px;
   font-weight: normal;
+  font-size: 14px;
+
+  @include mquery(1100) {
+    font-size: 16px;
+  }
+
+  @include mquery(1600) {
+    font-size: 20px;
+  }
+
+  @include mquery(1840) {
+    font-size: 30px;
+  }
 }
 
 .title {
-  font-size: 52px;
+  font-size: 40px;
   font-weight: bold;
+
+  @include mquery(1100) {
+    font-size: 30px;
+  }
+
+  @include mquery(1330) {
+    font-size: 35px;
+  }
+
+  @include mquery(1600) {
+    font-size: 40px;
+  }
+
+  @include mquery(1840) {
+    font-size: 52px;
+  }
 }

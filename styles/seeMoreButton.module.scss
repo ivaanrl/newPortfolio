@@ -3,20 +3,35 @@
 .see_more {
   font-weight: normal;
   background-color: transparent;
-  border: 7px solid;
-  padding: 7px;
+  border: 5px solid;
+  width: fit-content;
+  margin-right: 40px;
+  font-size: 16px;
+  padding: 4px;
 
-  @include mquery(1100) {
-    font-size: 26px;
+  @include mquery(600) {
+    padding: 10px;
+    font-size: 28px;
+  }
+
+  @include mquery(1000) {
+    margin-right: 0;
     padding: 5px;
+    margin-bottom: 40px;
+    border: 7px solid;
+    padding: 7px;
+    font-size: 48px;
+    font-size: 36px;
+  }
+
+  @include mquery(1200) {
+    font-size: 24px;
   }
 
   @include mquery(1330) {
     font-size: 30px;
-    padding: 7px;
   }
 
   @include mquery(1600) {
-    font-size: 48px;
   }
 }

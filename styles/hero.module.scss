@@ -25,10 +25,16 @@
     margin-bottom: 15%;
   }
 
-  @include mquery(1100) {
+  @include mquery(1000) {
     margin-top: 6%;
     margin-bottom: 6%;
   }
+
+  @include mqueryheight(1366) {
+    margin-top: 20%;
+    margin-bottom: 20%;
+  }
+
   p {
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -40,8 +46,12 @@
       font-size: 45px;
     }
 
-    @include mquery(1100) {
+    @include mquery(1000) {
       font-size: 90px;
+    }
+
+    @include mquery(2000) {
+      font-size: 120px;
     }
 
     span {

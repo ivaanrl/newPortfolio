@@ -2,65 +2,49 @@
 @import './media_queries';
 
 .main__container {
-  margin-top: 140px;
-  width: 100vw;
+  margin-top: 70px;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-bottom: 200px;
+  flex-direction: column;
+  align-items: flex-start;
 
-  height: 60vh;
+  height: fit-content;
+
+  @include mquery(1000) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 200px;
+  }
 
   @include mquery(1840) {
-    height: 80vh;
+    padding-right: 100px;
   }
-}
-
-.smaller_container {
-  background-color: transparent;
-  align-self: flex-end;
-  margin-right: 60px;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  background-color: $secondary-color;
-  overflow-y: hidden;
-
-  height: 100%;
-  width: 100%;
 }
 
 .image__container_1 {
-  position: absolute;
-  bottom: 0;
-  right: 0;
   aspect-ratio: 16/9;
-  bottom: 20px;
+  border: 20px solid $secondary-color;
+  background-color: $secondary-color;
+  width: 95%;
+  margin: auto;
 
-  height: 80%;
-  width: 80%;
+  @include mquery(1000) {
+    order: 2;
+
+    margin: 0;
+    width: 90%;
+    border-top: 80px solid $secondary-color;
+    border-bottom: 80px solid $secondary-color;
+    border-left: 120px solid $secondary-color;
+    margin-right: 60px;
+  }
 
   @include mquery(1200) {
-    bottom: 30px;
-  }
-
-  @include mquery(1330) {
-    bottom: 45px;
-  }
-
-  @include mquery(1500) {
-    bottom: 40px;
-  }
-
-  @include mquery(1600) {
-    width: 90%;
-    bottom: 40px;
-  }
-
-  @include mquery(1840) {
-    height: 85%;
-    width: 80%;
-    bottom: 60px;
+    width: 60%;
+    border-right: 20px solid $secondary-color;
+    border-top: 80px solid $secondary-color;
+    border-bottom: 50px solid $secondary-color;
+    border-left: 140px solid $secondary-color;
   }
 }
 
@@ -68,67 +52,54 @@
 }
 
 .image__container_3 {
-  position: absolute;
-  bottom: -2px;
-  right: 300px;
-}
+  aspect-ratio: 16/9;
+  border-top: 20px solid $secondary-color;
+  border-bottom: 20px solid $secondary-color;
+  border-right: 100px solid $secondary-color;
+  border-left: 100px solid $secondary-color;
+  background-color: $secondary-color;
+  width: 95%;
+  margin: auto;
+  order: 1;
 
-.text__container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-around;
-  margin-left: 60px;
-  z-index: 2;
+  max-height: 50vh;
+  overflow: hidden;
 
-  @include mquery(1100) {
-    margin-right: -100px;
-  }
-}
-
-.text__container_small {
-  @extend .text__container;
-
-  @include mquery(1100) {
-    margin-left: -220px;
-  }
-}
-
-.technologies {
-  font-weight: normal;
-  font-size: 14px;
-
-  @include mquery(1100) {
-    font-size: 16px;
+  @include mquery(700) {
+    border-bottom: none;
   }
 
-  @include mquery(1600) {
-    font-size: 20px;
+  @include mquery(1000) {
+    order: 2;
+    max-height: none;
+    overflow: auto;
+    order: 2;
+    width: 60%;
+    margin: 0;
+    margin-right: 60px;
+    border-right: 200px solid $secondary-color;
+    border-top: 50px solid $secondary-color;
+    border-left: 200px solid $secondary-color;
   }
 
-  @include mquery(1840) {
-    font-size: 30px;
-  }
-}
-
-.title {
-  font-size: 40px;
-  font-weight: bold;
-
-  @include mquery(1100) {
-    font-size: 30px;
+  @include mquery(1200) {
+    border-right: 250px solid $secondary-color;
+    border-top: 80px solid $secondary-color;
+    border-left: 250px solid $secondary-color;
   }
 
-  @include mquery(1330) {
-    font-size: 35px;
+  @include mquery(1400) {
+    border-right: 300px solid $secondary-color;
+    border-top: 50px solid $secondary-color;
+    border-left: 300px solid $secondary-color;
+    border-bottom: 50px solid $secondary-color;
+  }
+
+  @include mquery(1500) {
+    width: 55%;
   }
 
   @include mquery(1600) {
-    font-size: 40px;
-  }
-
-  @include mquery(1840) {
-    font-size: 52px;
+    width: 50%;
   }
 }

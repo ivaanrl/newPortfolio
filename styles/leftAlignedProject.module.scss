@@ -1,36 +1,56 @@
 @import './color_scheme';
+@import './media_queries';
 
 .main__container {
-  margin-top: 140px;
-  height: 80vh;
-  width: 100vw;
+  margin-top: 70px;
   display: flex;
-  flex-direction: row;
-  margin-bottom: 200px;
-}
+  flex-direction: column;
+  align-items: flex-start;
 
-.smaller_container {
-  height: 80vh;
-  width: 65vw;
-  background-color: $secondary-color;
-  align-self: flex-start;
-  margin-left: 60px;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  height: fit-content;
+
+  @include mquery(1000) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 200px;
+  }
+
+  @include mquery(1840) {
+    padding-left: 100px;
+  }
 }
 
 .image__container_1 {
-  position: absolute;
-  bottom: 0;
-  left: calc(50% - 550px);
-}
+  aspect-ratio: 16/9;
+  border: 10px solid $secondary-color;
+  background-color: $secondary-color;
+  order: 2;
+  width: 95%;
+  margin: auto;
 
-.image__container_3 {
-  position: absolute;
-  bottom: 0;
-  right: 300px;
+  @include mquery(1000) {
+    order: 1;
+    margin: 0;
+    margin-left: 60px;
+    border-left: 20px solid $secondary-color;
+    border-top: 60px solid $secondary-color;
+    border-bottom: 50px solid $secondary-color;
+    border-right: 140px solid $secondary-color;
+    width: 65%;
+  }
+
+  @include mquery(1200) {
+    border-left: 20px solid $secondary-color;
+    border-top: 80px solid $secondary-color;
+    border-bottom: 50px solid $secondary-color;
+    border-right: 140px solid $secondary-color;
+    width: 70%;
+  }
+
+  @include mquery(1500) {
+    width: 60%;
+  }
 }
 
 .text__container {

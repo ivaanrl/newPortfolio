@@ -127,6 +127,11 @@
   resolved "https://registry.yarnpkg.com/@iconify/icons-bx/-/icons-bx-1.0.5.tgz#d4e327943dae7f8af3ca52f9cf66eb7eed3446fb"
   integrity sha512-tKf5IOB8f1mtILlCPQ+nq12Mv6vUwwoM2iAWY3isuYEfuiGm1lIw3Q5Ccc3i5JveUKSdk2jNsRRhE9m+f8Qf+w==
 
+"@iconify/icons-cib@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-cib/-/icons-cib-1.1.0.tgz#f718e7c311d30573418f25cec2bf2fece286afd5"
+  integrity sha512-WZb+BlQAJQqcYdUb66pGpK4AEm3taWos5SWDoCaba5w0QoFmTeFY4G6kxmq1unvicT0Ah69DJ6KD1kIWh5iYUw==
+
 "@iconify/icons-eva@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@iconify/icons-eva/-/icons-eva-1.1.0.tgz#6d6dae59d766587e9034bbb782acca6c40ab4b0c"
@@ -137,10 +142,40 @@
   resolved "https://registry.yarnpkg.com/@iconify/icons-fa-brands/-/icons-fa-brands-1.0.16.tgz#e92a2a6492b6bb5b4a5afd6bad319fb28b6beadc"
   integrity sha512-ZcQ4Yto8KQz8EFmdvMOn6Rcn1/GUZU53cB3XN9HnT/eEQgS3SQIJiq22vbxd1977LgjhdgBRW81spVVvb11Pxw==
 
+"@iconify/icons-file-icons@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-file-icons/-/icons-file-icons-1.1.0.tgz#9e0e327553d74e08c0abb3511c3dacac55023602"
+  integrity sha512-8XhoioEh24NSGZCEh1WQ9lAJKj6ByFdV+y8DSrFwW09xPIzR5++YQOXezLLs8GOPy0UBZpS0MHdfi85/Pz+cnw==
+
 "@iconify/icons-gg@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@iconify/icons-gg/-/icons-gg-1.1.0.tgz#ae6451fa5573304357248d84e310acaaf0b90b6e"
   integrity sha512-AQ+1vmX0EdxfWFL51HUjZk+1WSm68zzEm/+D4DF/b/BAC/Lc2RamLd6n4z8h9phdugOI6W3u7FWSz08CPbVktg==
+
+"@iconify/icons-grommet-icons@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-grommet-icons/-/icons-grommet-icons-1.1.0.tgz#67ead773dfc70c131cf36d27a1f760a62f00aff5"
+  integrity sha512-O+co9AAItJ/2ECGKXYhOLaZ94DGA5qtJD7DpDOMFrTmELiaGS4QzFQHyNeXswHW44KXJ2UxkB0Xk61Ha175jgA==
+
+"@iconify/icons-logos@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-logos/-/icons-logos-1.1.0.tgz#72636ce7f5795f643a88378dd1ee6b8308641de7"
+  integrity sha512-CoyK/SLM3vpESPdxUvXFWWXE21lM5cc5f/e/FKI0dkTiUwb4AMqxKYcxFx5xIJ+TRmEmoK7eVfilzwxIls/NNQ==
+
+"@iconify/icons-openmoji@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-openmoji/-/icons-openmoji-1.1.0.tgz#c3cf2ff02ab5cd678a9905e37b741479f5c833cc"
+  integrity sha512-6u1N66jK/vz8cZfI4uLI4IkPiSfh3d5VolWPNw9tWx2ALVhc0Y5/vr/IMwzEAOu5WstQWKqnEAh0ivGRIrMosw==
+
+"@iconify/icons-ps@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-ps/-/icons-ps-1.1.0.tgz#ab7e08334b24f389a48ebce87c3718a285f267c7"
+  integrity sha512-oD5lqBKCIkxJgcrGQQrPRFx/GzSUS7rDdCKfSjfMXXxEmQXXRJuIEdG1neLUE/o/ucSivYBMtQDCh2QloId/EA==
+
+"@iconify/icons-simple-icons@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-simple-icons/-/icons-simple-icons-1.1.0.tgz#c9c49d77c790ae00c073b0aaf2828580f7c5159b"
+  integrity sha512-1bcJQCJdeymZpqnrJ27NzUBbL1EHplTZzqSBPxXRn9sV2KH8oRA1XHB58iwxZ5jiRiY2Pgi8jEor3y1un3BWQw==
 
 "@iconify/react@^1.1.3":
   version "1.1.3"
@@ -177,6 +212,22 @@
   version "10.0.3"
   resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-10.0.3.tgz#276bec60eae18768f96baf8a52f668f657f50ab4"
   integrity sha512-XtzzPX2R4+MIyu1waEQUo2tiNwWVEkmObA6pboRCDTPOs4Ri8ckaIE08lN5A5opyF6GVN+IEq/J8KQrgsePsZQ==
+
+"@popmotion/easing@^1.0.1":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@popmotion/easing/-/easing-1.0.2.tgz#17d925c45b4bf44189e5a38038d149df42d8c0b4"
+  integrity sha512-IkdW0TNmRnWTeWI7aGQIVDbKXPWHVEYdGgd5ZR4SH/Ty/61p63jCjrPxX1XrR7IGkl08bjhJROStD7j+RKgoIw==
+
+"@popmotion/popcorn@^0.4.4":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@popmotion/popcorn/-/popcorn-0.4.4.tgz#a5f906fccdff84526e3fcb892712d7d8a98d6adc"
+  integrity sha512-jYO/8319fKoNLMlY4ZJPiPu8Ea8occYwRZhxpaNn/kZsK4QG2E7XFlXZMJBsTWDw7I1i0uaqyC4zn1nwEezLzg==
+  dependencies:
+    "@popmotion/easing" "^1.0.1"
+    framesync "^4.0.1"
+    hey-listen "^1.0.8"
+    style-value-types "^3.1.7"
+    tslib "^1.10.0"
 
 "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.6":
   version "7.0.6"
@@ -1691,7 +1742,7 @@ framer-motion@^2.9.4:
   optionalDependencies:
     "@emotion/is-prop-valid" "^0.8.2"
 
-framesync@^4.1.0:
+framesync@^4.0.1, framesync@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/framesync/-/framesync-4.1.0.tgz#69a8db3ca432dc70d6a76ba882684a1497ef068a"
   integrity sha512-MmgZ4wCoeVxNbx2xp5hN/zPDCbLSKiDt4BbbslK7j/pM2lg5S0vhTNv1v8BCVb99JPIo6hXBFdwzU7Q4qcAaoQ==
@@ -3672,7 +3723,7 @@ style-loader@1.2.1:
     loader-utils "^2.0.0"
     schema-utils "^2.6.6"
 
-style-value-types@^3.1.9:
+style-value-types@^3.1.7, style-value-types@^3.1.9:
   version "3.1.9"
   resolved "https://registry.yarnpkg.com/style-value-types/-/style-value-types-3.1.9.tgz#faf7da660d3f284ed695cff61ea197d85b9122cc"
   integrity sha512-050uqgB7WdvtgacoQKm+4EgKzJExVq0sieKBQQtJiU3Muh6MYcCp4T3M8+dfl6VOF2LR0NNwXBP1QYEed8DfIw==

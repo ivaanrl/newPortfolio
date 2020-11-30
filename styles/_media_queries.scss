@@ -11,6 +11,10 @@
     @media (min-width: 1500px) {
       @content;
     }
+  } @else if $size == 1400 {
+    @media (min-width: 1400px) {
+      @content;
+    }
   } @else if $size == 1330 {
     @media (min-width: 1330px) {
       @content;
@@ -23,6 +27,22 @@
     @media (min-width: 1100px) {
       @content;
     }
+  } @else if $size == 1000 {
+    @media (min-width: 1000px) {
+      @content;
+    }
+  } @else if $size == 900 {
+    @media (min-width: 900px) {
+      @content;
+    }
+  } @else if $size == 800 {
+    @media (min-width: 800px) {
+      @content;
+    }
+  } @else if $size == 700 {
+    @media (min-width: 700px) {
+      @content;
+    }
   } @else if $size == 600 {
     @media (min-width: 600px) {
       @content;
@@ -31,12 +51,48 @@
     @media (min-width: 550px) {
       @content;
     }
+  } @else if $size == 500 {
+    @media (min-width: 500px) {
+      @content;
+    }
   } @else if $size == 440 {
     @media (min-width: 440px) {
       @content;
     }
+  } @else if $size == 450 {
+    @media (min-width: 450px) {
+      @content;
+    }
+  } @else if $size == 360 {
+    @media (min-width: 360px) {
+      @content;
+    }
   } @else if $size == 330 {
     @media (min-width: 330px) {
+      @content;
+    }
+  } @else if $size == 2400 {
+    @media (min-width: 2400px) {
+      @content;
+    }
+  } @else if $size == 2000 {
+    @media (min-width: 2000px) {
+      @content;
+    }
+  }
+}
+
+@mixin mqueryheight($height) {
+  @if $height==1366 {
+    @media (min-height: 1366px) {
+      @content;
+    }
+  } @else if $height == 700 {
+    @media (min-height: 700px) {
+      @content;
+    }
+  } @else if $height == 1000 {
+    @media (min-height: 1000px) {
       @content;
     }
   }

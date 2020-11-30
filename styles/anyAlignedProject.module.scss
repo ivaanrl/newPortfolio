@@ -1,0 +1,121 @@
+@import './color_scheme';
+@import './media_queries';
+
+.text__container {
+  display: flex;
+  flex-direction: column;
+  order: 2;
+  align-items: flex-start;
+  width: 95%;
+  margin: auto;
+
+  @include mquery(1000) {
+    margin: 0;
+    width: auto;
+    justify-content: space-around;
+    order: 1;
+    z-index: 3;
+
+    &:nth-child(2n + 1) {
+      align-items: flex-end;
+      margin-right: -100px;
+    }
+
+    &:nth-child(2n) {
+      align-items: flex-start;
+      margin-left: -100px;
+    }
+  }
+}
+
+.text__container_small {
+  @extend .text__container;
+
+  @include mquery(1100) {
+    margin-left: -220px;
+  }
+}
+
+.technologies {
+  font-weight: normal;
+  color: $muted-text-on-white;
+  font-size: 12px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  //text-align: center;
+
+  @include mquery(400) {
+    font-size: 18px;
+  }
+
+  @include mquery(700) {
+    font-size: 20px;
+  }
+
+  @include mquery(900) {
+    font-size: 14px;
+  }
+
+  @include mquery(1000) {
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-size: 20px;
+  }
+
+  @include mquery(1600) {
+  }
+
+  @include mquery(1840) {
+    font-size: 30px;
+  }
+}
+
+.title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 15px;
+  flex: 1;
+
+  @include mquery(400) {
+    font-size: 25px;
+  }
+
+  @include mquery(700) {
+    font-size: 40px;
+  }
+
+  @include mquery(900) {
+    font-size: 25px;
+  }
+
+  @include mquery(1000) {
+    font-size: 30px;
+    margin-bottom: 40px;
+    font-size: 36px;
+    margin-left: 10px;
+  }
+
+  @include mquery(1200) {
+    margin-left: 0;
+    font-size: 40px;
+  }
+
+  @include mquery(1840) {
+    font-size: 52px;
+  }
+}
+
+.all_buttons__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  @include mquery(1000) {
+    width: auto;
+    flex-direction: column;
+    flex: 1;
+    align-items: flex-end;
+  }
+}

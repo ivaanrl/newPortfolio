@@ -1,7 +1,7 @@
 import styles from '../../../styles/rightAlignedProject.module.scss';
+import projectStyles from '../../../styles/anyAlignedProject.module.scss';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import CodeAndLiveButtons from '../codeAndLiveButtons/codeAndLiveButtons';
 import SeeMoreButton from '../seeMoreButton/seeMoreButton';
 
@@ -22,59 +22,63 @@ const RightALignedProject = ({
   code_link,
   live_link,
 }: Props) => {
-  const [isHovering, setIsHovering] = useState<boolean>(false);
-
   return (
     <div className={styles.main__container}>
       <div
         className={
-          big_name ? styles.text__container : styles.text__container_small
+          big_name
+            ? projectStyles.text__container
+            : projectStyles.text__container_small
         }
       >
-        <div className={styles.technologies}>{technologies}</div>
-        <div className={styles.title}>{name}</div>
-        <SeeMoreButton />
-        <CodeAndLiveButtons />
+        <div className={projectStyles.technologies}>{technologies}</div>
+        <div className={projectStyles.title}>{name}</div>
+        <div className={projectStyles.all_buttons__container}>
+          <SeeMoreButton />
+          <CodeAndLiveButtons />
+        </div>
       </div>
-      <motion.div
+      {/*<motion.div
         whileHover={{ scale: 0.9 }}
         className={styles.smaller_container}
-      >
-        {project_number === 1 ? (
-          <motion.div
-            onHoverStart={() => setIsHovering(true)}
-            onHoverEnd={() => setIsHovering(false)}
-            className={styles.image__container_1}
-          >
-            <Image
-              loading="eager"
-              priority={true}
-              quality={100}
-              layout="fill"
-              src="/images/first_project.png"
-              alt="rocketleagueairrace.com screenshot"
-              className={styles.image__1}
-            />
-          </motion.div>
-        ) : null}
-        {project_number === 3 ? (
-          <motion.div
-            onHoverStart={() => setIsHovering(true)}
-            onHoverEnd={() => setIsHovering(false)}
-            className={styles.image__container_3}
-          >
-            <Image
-              loading="eager"
-              priority={true}
-              quality={100}
-              height="700px"
-              width="350px"
-              src="/images/third_project.png"
-              alt="rocketleagueairrace.com screenshot"
-            />
-          </motion.div>
-        ) : null}
-      </motion.div>
+      >*/}
+      {project_number === 1 ? (
+        <motion.div
+          whileHover={{ scale: 0.9 }}
+          className={styles.image__container_1}
+        >
+          {/*<img src="/images/first_project.png" style={{ width: '100%' }} /> */}
+          <Image
+            loading="eager"
+            priority={true}
+            quality={100}
+            layout="responsive"
+            height={935}
+            width={1920}
+            src="/images/first_project.png"
+            alt="rocketleagueairrace.com screenshot"
+            className={styles.image__1}
+          />
+        </motion.div>
+      ) : null}
+      {project_number === 3 ? (
+        <motion.div
+          whileHover={{ scale: 0.9 }}
+          className={styles.image__container_3}
+        >
+          <Image
+            loading="eager"
+            priority={true}
+            quality={100}
+            layout="responsive"
+            height={792}
+            width={414}
+            src="/images/third_project.png"
+            alt="alpalac screenshot"
+          />
+        </motion.div>
+      ) : null}
+      {/*</motion.div>*/}
     </div>
   );
 };

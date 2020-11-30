@@ -1,0 +1,43 @@
+@import './color_scheme';
+
+.container {
+  width: 100%;
+  padding-right: 30px;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.not_selected__background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $secondary-color;
+  z-index: 0;
+}
+
+.text_container {
+  flex-basis: 33%;
+  position: relative;
+
+  p {
+    position: relative;
+    z-index: 2;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.text {
+  width: fit-content;
+  position: relative;
+  margin: auto;
+  height: 100;
+  padding-left: 10px;
+  padding-right: 10px;
+}

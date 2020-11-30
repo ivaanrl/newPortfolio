@@ -8,7 +8,7 @@
   left: 0;
   right: 0;
   position: fixed;
-  z-index: 1000;
+  z-index: 1100;
   overflow: hidden;
   background-color: rgba($color: #000000, $alpha: 0.6);
   display: flex;
@@ -17,12 +17,19 @@
 }
 
 .page__container {
-  width: 60%;
-  height: 80%;
+  width: 98%;
+  height: 98%;
   background-color: white;
   display: flex;
   flex-direction: column;
   position: relative;
+  @include mquery(1100) {
+    width: 60%;
+  }
+
+  @include mqueryheight(660) {
+    height: 80%;
+  }
 }
 
 .page__header__container {
@@ -41,6 +48,8 @@
   flex-direction: row;
   width: 100%;
   justify-content: space-around;
+  margin-bottom: 100px;
+  position: relative;
 }
 
 .page__button_prev {
@@ -56,30 +65,47 @@
 .skills_container {
   width: 80%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  flex-wrap: nowrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   position: relative;
+
+  @include mquery(1100) {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 .skill_container {
-  flex-basis: 40%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   color: $main-color-dark;
-  height: 25;
+  width: 100%;
+  height: 60px;
   position: relative;
 
-  &:nth-child(odd) {
-    margin-right: 70px;
+  @include mquery(1100) {
+    flex-basis: 40%;
+    &:nth-child(odd) {
+      margin-right: 70px;
+    }
   }
 }
 
 .skill_text {
-  font-size: 35px;
+  font-size: 20px;
+
+  @include mquery(500) {
+    font-size: 28px;
+  }
+
+  @include mquery(1100) {
+    font-size: 35px;
+  }
 }
 
 .skill_icon {
@@ -115,4 +141,24 @@
   font-size: 40px;
   padding-top: 10px;
   padding-right: 10px;
+
+  display: none;
+
+  @include mquery(1100) {
+    display: block;
+  }
+}
+
+.skill__small_screen_close {
+  position: absolute;
+  bottom: 40px;
+  left: calc(50% - 200px);
+  width: 400px;
+
+  background-color: $main-color-dark;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 30px;
+  font-family: 'Montserrat';
 }

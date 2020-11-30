@@ -78,8 +78,10 @@ const Skills: (
       { label: 'Yarn', icon: yarnIcon },
       { label: 'NPM', icon: npmIcon },
     ],
-    { label: 'GIT', icon: bxlGit },
-    { label: 'Webpack', icon: webpackIcon },
+    [
+      { label: 'GIT', icon: bxlGit },
+      { label: 'Webpack', icon: webpackIcon },
+    ],
     [
       { label: 'Netflify', icon: netlifyIcon },
       { label: 'Vercel', icon: vercelIcon },
@@ -137,6 +139,12 @@ const SkillsCard = ({ setPage, page }: Props) => {
         <div className={styles.page__button_and_page_container}>
           <Page skills={Skills[page]} key={page} />
         </div>
+        <motion.button
+          onClick={() => setPage(3)}
+          className={styles.skill__small_screen_close}
+        >
+          Close
+        </motion.button>
         <motion.button
           whileHover={{
             rotate: 360,

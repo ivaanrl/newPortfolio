@@ -97,15 +97,38 @@ const FirstProject = () => {
                 pathLength: 0,
               }}
               animate={{
-                pathLength: isHovered ? 1 : 0,
+                pathLength: isHovered ? 0.6 : 0,
+                rotate: isHovered ? 120 : 350,
               }}
               transition={{
                 duration: 0.6,
               }}
-              d="M8 1C4.13438 1 1 4.13438 1 8C1 11.8656 4.13438 15 8 15C11.8656 15 15 11.8656 15 8C15 4.13438 11.8656 1 8 1ZM8 13.8125C4.79063 13.8125 2.1875 11.2094 2.1875 8C2.1875 4.79063 4.79063 2.1875 8 2.1875C11.2094 2.1875 13.8125 4.79063 13.8125 8C13.8125 11.2094 11.2094 13.8125 8 13.8125Z"
-              fill="none"
+              d="
+              M 8, 8
+              m -7, 0
+              a 7,7 0 1,0 14,0
+              a 7,7 0 1,0 -14,0"
               stroke="white"
-              strokeWidth="5%"
+              strokeWidth="1"
+            />
+            <motion.path
+              initial={{
+                pathLength: 0,
+              }}
+              animate={{
+                pathLength: isHovered ? 0.4 : 0,
+                rotate: isHovered ? 130 : 350,
+              }}
+              transition={{
+                duration: 0.6,
+              }}
+              d="
+              M 8, 8
+              m -5, 0
+              a 5,5 0 1,0 10,0
+              a 5,5 0 1,0 -10,0"
+              stroke="white"
+              strokeWidth="1"
             />
 
             <motion.path

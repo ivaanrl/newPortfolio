@@ -2,13 +2,12 @@
 @import './media_queries';
 
 .buttons__container {
-  background-color: $main-color;
-  padding: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
 
+  /*
   @include mquery(900) {
     padding: 10px;
   }
@@ -21,7 +20,7 @@
     padding: 30px;
     padding-top: 40px;
     padding-bottom: 40px;
-  }
+  } */
 }
 
 .button {
@@ -30,6 +29,8 @@
   border: 5px solid;
   border-image-slice: 1;
   padding: 4px;
+  font-family: 'Montserrat';
+  color: white;
 
   @include mquery(600) {
     font-size: 24px;
@@ -50,8 +51,8 @@
   @extend .button;
   border-image-source: linear-gradient(
     200.54deg,
-    #000000 62.45%,
-    $main-color 62.46%
+    #ffffff 62.45%,
+    #c30017 62.46%
   );
   margin-right: 20px;
 
@@ -77,7 +78,7 @@
 
   border-image-source: linear-gradient(
     150.6deg,
-    #000000 74.52%,
-    $main-color 75.11%
+    #ffffff 74.52%,
+    #c30017 75.11%
   );
 }

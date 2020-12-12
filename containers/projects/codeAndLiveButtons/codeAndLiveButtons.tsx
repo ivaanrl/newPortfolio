@@ -11,11 +11,11 @@ const CodeAndLiveButtons = () => {
     >
       <motion.button
         whileHover={{
-          backgroundColor: '#000000',
-          color: '#ffffff',
+          backgroundColor: '#ffffff',
+          color: '#c30017',
           borderImageSlice: 1,
           borderImageSource:
-            'linear-gradient(200.54deg,#000000 100%,#FFFFFF 0%)',
+            'linear-gradient(200.54deg,#ffffff 100%,#000000 0%)',
         }}
         className={styles.button__left}
       >
@@ -23,11 +23,11 @@ const CodeAndLiveButtons = () => {
       </motion.button>
       <motion.button
         whileHover={{
-          backgroundColor: '#000000',
-          color: '#ffffff',
+          backgroundColor: '#ffffff',
+          color: '#c30017',
           borderImageSlice: 1,
           borderImageSource:
-            'linear-gradient(150.6deg,#000000 100%,#FFFFFF 0%)',
+            'linear-gradient(150.6deg,#ffffff 100%,#000000 0%)',
         }}
         className={styles.button__right}
       >

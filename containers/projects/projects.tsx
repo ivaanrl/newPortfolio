@@ -3,6 +3,7 @@ import LeftALignedProject from './leftAlignedProject/leftAlignedProject';
 import RightALignedProject from './rightAlignedProject/rightAlignedProject';
 import { motion, useViewportScroll } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import FirstProject from './firstProject';
 
 const Projects = () => {
   const [angle, setAngle] = useState<number>(0);
@@ -16,6 +17,7 @@ const Projects = () => {
     <>
       <div className={styles.projects__container}>
         <p className={styles.projects__title}>Projects</p>
+        {/*
         <RightALignedProject
           project_number={1}
           technologies="Frontend developer, UI, UX, Server Admin"
@@ -23,16 +25,18 @@ const Projects = () => {
           big_name
           code_link=""
           live_link=""
-        />
-        <LeftALignedProject />
+          />
+          <LeftALignedProject />
         <RightALignedProject
-          project_number={3}
-          technologies="FullStack Dev, UI, UX"
-          name="Alpalac"
-          big_name={false}
-          code_link=""
-          live_link=""
-        />
+        project_number={3}
+        technologies="FullStack Dev, UI, UX"
+        name="Alpalac"
+        big_name={false}
+        code_link=""
+        live_link=""
+        /> 
+      */}
+        <FirstProject />
       </div>
       <div className={styles.github__button_container}>
         <motion.button

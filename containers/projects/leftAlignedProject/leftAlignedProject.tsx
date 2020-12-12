@@ -15,7 +15,7 @@ const LeftALignedProject = () => {
         <Image
           height="700px"
           width="1000px"
-          src="/images/second_project.png"
+          src="/images/alpalac_drawing.png"
           alt="rocketleagueairrace.com screenshot"
         />
       </motion.div>

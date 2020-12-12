@@ -1,24 +1,51 @@
+@import './media_queries';
+
 .container {
   width: 100%;
   margin-top: 160px;
 }
 
 .content__container {
-  width: 50%;
-  height: 45vh;
   margin: auto;
+  height: 60vh;
   background-color: #c30017;
-  display: fleX;
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
   overflow-y: hidden;
   position: relative;
+  width: 85%;
+
+  @include mqueryheight(600) {
+    height: 80vh;
+  }
+
+  @include mqueryheight(900) {
+    height: 65vh;
+  }
+
+  @include mquery(1000) {
+    flex-direction: row;
+    height: 45vh;
+  }
+
+  @include mquery(1200) {
+    width: 70%;
+  }
+
+  @include mquery(1400) {
+    width: 65%;
+  }
+
+  @include mquery(1600) {
+    width: 50%;
+  }
 }
 
 .image__container {
-  width: 15%;
-  margin-right: 150px;
+  width: 30%;
+  margin-right: 30%;
 
   //box-shadow: 90px -24px 98px -18px rgba(0, 0, 0, 0.75);
 
@@ -28,6 +55,19 @@
   margin-bottom: -10px;
   background-color: transparent;
   border-top-right-radius: 30px;
+
+  @include mquery(500) {
+    margin-right: 150px;
+    width: 20%;
+  }
+
+  @include mquery(700) {
+    width: 18%;
+  }
+
+  @include mquery(900) {
+    width: 15%;
+  }
 }
 
 .image {
@@ -59,4 +99,13 @@
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 50px;
+}
+
+.svg__button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  background-color: transparent;
+  border: none;
 }

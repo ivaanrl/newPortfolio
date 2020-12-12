@@ -40,7 +40,7 @@ const FirstProject = () => {
   };
 
   const [isHovered, setIsHovered] = useState<boolean>(false);
-
+  const [isSVGButtonHovered, setIsSVGButtonHovered] = useState<boolean>(false);
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -77,13 +77,11 @@ const FirstProject = () => {
             className={styles.image}
           />
         </motion.div>
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '20px',
-            left: '20px',
-            color: 'white',
-          }}
+        <motion.button
+          className={styles.svg__button}
+          onMouseEnter={() => setIsSVGButtonHovered(true)}
+          onMouseLeave={() => setIsSVGButtonHovered(false)}
+          whileHover={{ scale: 1.2 }}
         >
           <motion.svg
             width="50"
@@ -97,9 +95,11 @@ const FirstProject = () => {
                 pathLength: 0,
               }}
               animate={{
-                pathLength: isHovered ? 0.6 : 0,
+                pathLength: isHovered ? (isSVGButtonHovered ? 1 : 0.6) : 0,
                 rotate: isHovered ? 120 : 350,
+                fill: isSVGButtonHovered ? 'white' : 'transparent',
               }}
+              fill="transparent"
               transition={{
                 duration: 0.6,
               }}
@@ -116,8 +116,9 @@ const FirstProject = () => {
                 pathLength: 0,
               }}
               animate={{
-                pathLength: isHovered ? 0.4 : 0,
+                pathLength: isHovered ? (isSVGButtonHovered ? 1 : 0.5) : 0,
                 rotate: isHovered ? 130 : 350,
+                stroke: isSVGButtonHovered ? '#c30017' : 'white',
               }}
               transition={{
                 duration: 0.6,
@@ -137,6 +138,7 @@ const FirstProject = () => {
               }}
               animate={{
                 opacity: isHovered ? 1 : 0,
+                fill: isSVGButtonHovered ? '#c30017' : 'white',
               }}
               transition={{
                 duration: 0.6,
@@ -150,6 +152,7 @@ const FirstProject = () => {
               }}
               animate={{
                 opacity: isHovered ? 1 : 0,
+                fill: isSVGButtonHovered ? '#c30017' : 'white',
               }}
               transition={{
                 duration: 0.6,
@@ -160,7 +163,7 @@ const FirstProject = () => {
               fill="white"
             />
           </motion.svg>
-        </div>
+        </motion.button>
       </motion.div>
     </div>
   );

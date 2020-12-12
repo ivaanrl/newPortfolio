@@ -31,13 +31,10 @@
   padding: 4px;
   font-family: 'Montserrat';
   color: white;
+  font-size: 20px;
 
   @include mquery(600) {
-    font-size: 24px;
-  }
-
-  @include mquery(900) {
-    font-size: 18px;
+    font-size: 30px;
   }
 
   @include mquery(1000) {

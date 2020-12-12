@@ -99,5 +99,13 @@
     @media (min-height: 660px) {
       @content;
     }
+  } @else if $height == 600 {
+    @media (min-height: 600px) {
+      @content;
+    }
+  } @else if $height == 900 {
+    @media (min-height: 900px) {
+      @content;
+    }
   }
 }

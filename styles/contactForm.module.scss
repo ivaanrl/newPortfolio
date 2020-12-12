@@ -1,0 +1,170 @@
+@import './media_queries';
+@import './color_scheme';
+
+.modal__container {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 1100;
+  overflow: hidden;
+  background-color: rgba($color: #000000, $alpha: 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 80%;
+  height: 80%;
+  background-color: $main-color-dark;
+  display: flex;
+  flex-direction: row;
+}
+
+.contactInfo__main__container {
+  width: 50%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  padding-left: 70px;
+}
+
+.contactInfo__container {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactInfo__title {
+  font-family: 'Montserrat';
+  font-size: 40px;
+  color: white;
+}
+
+.contactInfo__itemsContainer {
+  margin-top: 100px;
+}
+
+.contactInfo__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  width: 70%;
+  border: 2px solid transparent;
+}
+
+.contactInfo__itemIconContainer {
+}
+
+.contactInfo__itemIcon {
+  color: $main-color;
+}
+
+.contactInfo__itemText {
+  color: white;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.contactForm__container {
+  width: 50%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 50px;
+}
+
+.contactForm {
+  height: 90%;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  box-sizing: border-box;
+  padding: 20px;
+  position: relative;
+}
+
+.inputAndLabelContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.label {
+  margin-bottom: 5px;
+  color: $main-color-dark;
+}
+
+.input {
+  padding: 10px;
+  padding-left: 40px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid black;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $main-color;
+  }
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+}
+
+.inputIcon {
+  position: absolute;
+  font-size: 20px;
+  top: calc(50% - 10px);
+  left: 10px;
+
+  &__focus {
+    @extend .inputIcon;
+    color: $main-color;
+  }
+}
+
+.textarea {
+  width: 100%;
+  max-width: 100%;
+  max-height: 200px;
+  padding: 20px;
+  font-family: 'Montserrat';
+  border-radius: 4px;
+  border: 1px solid black;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $main-color;
+  }
+}
+
+.submitButton {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  border: 7px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    160.54deg,
+    $main-color-dark 62.45%,
+    #ffffff 62.46%
+  );
+  color: $main-color-dark;
+  padding: 18px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+}

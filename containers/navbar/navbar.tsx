@@ -6,6 +6,10 @@ import { motion } from 'framer-motion';
 import { MenuToggle } from './menuToggle';
 import Navigation from './navigation';
 
+interface Props {
+  showContactForm: () => void;
+}
+
 const megaMenu = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 90% 100px)`,
@@ -28,7 +32,7 @@ const megaMenu = {
   },
 };
 
-const Navbar = () => {
+const Navbar = ({ showContactForm }: Props) => {
   const [ref, { height }] = useMeasure();
   const [isOpen, toggleOpen] = useCycle(false, true);
   const windowDimensions = useWindowDimensions();
@@ -43,6 +47,7 @@ const Navbar = () => {
             color: '#ffffff',
           }}
           className={styles.navbar__contact}
+          onClick={showContactForm}
         >
           Contact
         </motion.button>

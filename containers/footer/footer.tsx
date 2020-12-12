@@ -2,7 +2,10 @@ import styles from '../../styles/footer.module.scss';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-const Footer = () => {
+interface Props {
+  showContactForm: () => void;
+}
+const Footer = ({ showContactForm }) => {
   const [isBeingHovered, setIsBeingHovered] = useState<boolean>(false);
 
   return (
@@ -21,6 +24,7 @@ const Footer = () => {
         onMouseEnter={() => setIsBeingHovered(true)}
         onMouseLeave={() => setIsBeingHovered(false)}
         className={styles.button}
+        onClick={showContactForm}
       >
         GET IN CONTACT
       </motion.button>

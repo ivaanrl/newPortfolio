@@ -12,7 +12,9 @@ function MyApp({ Component, pageProps }) {
       <Navbar showContactForm={() => setShowContactForm(true)} />
       <Component {...pageProps} />
       <Footer showContactForm={() => setShowContactForm(true)} />
-      {showContactForm ? <ContactForm /> : null}
+      {showContactForm ? (
+        <ContactForm hideContactForm={() => setShowContactForm(false)} />
+      ) : null}
     </>
   );
 }

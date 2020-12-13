@@ -22,6 +22,7 @@
   background-color: $main-color-dark;
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 
 .contactInfo__main__container {
@@ -58,9 +59,6 @@
   padding: 10px;
   width: 70%;
   border: 2px solid transparent;
-}
-
-.contactInfo__itemIconContainer {
 }
 
 .contactInfo__itemIcon {
@@ -167,4 +165,17 @@
   border-radius: 4px;
   font-size: 18px;
   font-weight: bold;
+}
+
+.close__buttonContainer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+}
+
+.close__button {
+  font-size: 40px;
+  color: $main-color;
 }

@@ -1,12 +1,18 @@
+import { useEffect, useState } from 'react';
 import styles from '../../styles/contactForm.module.scss';
 import { motion } from 'framer-motion';
 import { useFormik } from 'formik';
+import emailjs from 'emailjs-com';
 import { Icon } from '@iconify/react';
 import bxsPhone from '@iconify/icons-bx/bxs-phone';
 import envelopeFill from '@iconify/icons-bi/envelope-fill';
 import personIcon from '@iconify/icons-bi/person';
 import envelopeClosed from '@iconify/icons-cil/envelope-closed';
-import { useState } from 'react';
+import closeFill from '@iconify/icons-eva/close-fill';
+
+interface Props {
+  hideContactForm: () => void;
+}
 
 const modalVariants = {
   hidden: { opacity: 0 },
@@ -18,14 +24,39 @@ const modalVariants = {
   },
 };
 
-const ContactForm = () => {
+const containerVariants = {
+  hidden: { scale: 0 },
+  visible: {
+    scale: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
+const ContactForm = ({ hideContactForm }: Props) => {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  });
+
   const formik = useFormik({
     initialValues: {
       name: '',
       email: '',
       message: '',
     },
-    onSubmit: (values) => {},
+    onSubmit: ({ name, email, message }) => {
+      emailjs.send(
+        'gmail',
+        'template_6UyWUtVR',
+        { name, email, message },
+        'user_Tqu4Qb768TWFhX3VukiG7',
+      );
+    },
   });
 
   const [nameFocus, setNameFocus] = useState<boolean>(false);
@@ -38,7 +69,28 @@ const ContactForm = () => {
       variants={modalVariants}
       className={styles.modal__container}
     >
-      <motion.div className={styles.container}>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+        className={styles.container}
+      >
+        <motion.button
+          whileHover={{
+            rotate: 360,
+            scale: 1.1,
+            transition: {
+              duration: 0.5,
+            },
+          }}
+          whileTap={{
+            scale: 0.9,
+          }}
+          className={styles.close__buttonContainer}
+          onClick={hideContactForm}
+        >
+          <Icon icon={closeFill} className={styles.close__button} />
+        </motion.button>
         <div className={styles.contactInfo__main__container}>
           <div className={styles.contactInfo__container}>
             <p className={styles.contactInfo__title}>Contact me</p>
@@ -84,7 +136,7 @@ const ContactForm = () => {
           </div>
         </div>
         <div className={styles.contactForm__container}>
-          <form className={styles.contactForm}>
+          <form className={styles.contactForm} onSubmit={formik.handleSubmit}>
             <div className={styles.inputAndLabelContainer}>
               <label className={styles.label}>Name</label>
               <div className={styles.inputContainer}>
@@ -103,6 +155,7 @@ const ContactForm = () => {
                   value={formik.values.name}
                   autoFocus={true}
                   onFocus={() => setNameFocus(true)}
+                  onBlur={() => setNameFocus(false)}
                 />
               </div>
             </div>
@@ -126,6 +179,7 @@ const ContactForm = () => {
                   onChange={formik.handleChange}
                   value={formik.values.email}
                   onFocus={() => setEmailFocus(true)}
+                  onBlur={() => setEmailFocus(false)}
                 />
               </div>
             </div>
@@ -150,6 +204,7 @@ const ContactForm = () => {
                 scale: 1.1,
               }}
               className={styles.submitButton}
+              type="submit"
             >
               Send Message
             </motion.button>

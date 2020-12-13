@@ -34,6 +34,7 @@ import netlifyIcon from '@iconify/icons-cib/netlify';
 import pm2Icon from '@iconify/icons-file-icons/pm2';
 import closeFill from '@iconify/icons-eva/close-fill';
 import Icon from '@iconify/react';
+import { useEffect } from 'react';
 /*END ICON IMPORTS*/
 
 const Skills: (
@@ -120,6 +121,14 @@ const pageContainerVariants = {
 };
 
 const SkillsCard = ({ setPage, page }: Props) => {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  });
+
   return (
     <motion.div
       initial="hidden"

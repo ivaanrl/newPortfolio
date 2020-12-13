@@ -1,10 +1,40 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from '../../styles/firstProject.module.scss';
 import Image from 'next/image';
-import { motion, useMotionValue, useTransform } from 'framer-motion';
+import {
+  motion,
+  useAnimation,
+  useMotionValue,
+  useTransform,
+} from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import CodeAndLiveButtons from './codeAndLiveButtons/codeAndLiveButtons';
 
+const scrollVariants = {
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+  hidden: {
+    y: '10vh',
+    opacity: 0,
+  },
+};
+
 const FirstProject = () => {
+  const scrollAnimationControls = useAnimation();
+  const threshold = 30;
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      scrollAnimationControls.start('visible');
+    }
+  }, [inView]);
+
   const angle = 8;
 
   // we replace the useState with two motion values. One for each axis.
@@ -46,7 +76,13 @@ const FirstProject = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      ref={ref}
+      variants={scrollVariants}
+      animate={scrollAnimationControls}
+      initial="hidden"
+    >
       <motion.div
         className={styles.content__container}
         onPointerMove={onMove}
@@ -165,7 +201,7 @@ const FirstProject = () => {
           </motion.svg>
         </motion.button>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

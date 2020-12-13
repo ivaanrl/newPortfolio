@@ -23,6 +23,10 @@
     @media (min-width: 1200px) {
       @content;
     }
+  } @else if $size == 1250 {
+    @media (min-width: 1250px) {
+      @content;
+    }
   } @else if $size == 1100 {
     @media (min-width: 1100px) {
       @content;
@@ -101,6 +105,10 @@
     }
   } @else if $height == 600 {
     @media (min-height: 600px) {
+      @content;
+    }
+  } @else if $height == 500 {
+    @media (min-height: 500px) {
       @content;
     }
   } @else if $height == 900 {

@@ -17,48 +17,112 @@
 }
 
 .container {
-  width: 80%;
+  width: 90%;
   height: 80%;
   background-color: $main-color-dark;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   position: relative;
+
+  @include mqueryheight(500) {
+    height: 98%;
+  }
+
+  @include mqueryheight(700) {
+    height: 80%;
+  }
+
+  @include mqueryheight(1366) {
+    height: 65%;
+  }
+
+  @include mquery(1100) {
+    flex-direction: row;
+  }
+
+  @include mquery(1250) {
+    width: 80%;
+  }
 }
 
 .contactInfo__main__container {
-  width: 50%;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  padding: 50px;
-  padding-left: 70px;
+  width: 100%;
+  margin-top: 8px;
+  margin-left: 20px;
+
+  @include mqueryheight(900) {
+    padding-top: 50px;
+    padding-left: 50px;
+  }
+
+  @include mquery(1100) {
+    padding-left: 70px;
+    padding: 50px;
+    width: 40%;
+  }
+
+  @include mquery(1400) {
+    width: 50%;
+  }
 }
 
 .contactInfo__container {
-  height: 90%;
   width: 100%;
   display: flex;
   flex-direction: column;
+
+  @include mquery(1100) {
+    height: 90%;
+  }
 }
 
 .contactInfo__title {
   font-family: 'Montserrat';
-  font-size: 40px;
   color: white;
+  font-size: 30px;
+  margin-top: 7px;
+
+  @include mquery(400) {
+    font-size: 40px;
+    margin-top: 0;
+  }
 }
 
 .contactInfo__itemsContainer {
-  margin-top: 100px;
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+
+  @include mquery(800) {
+    flex-direction: row;
+  }
+
+  @include mquery(1100) {
+    margin-top: 100px;
+    flex-direction: column;
+  }
 }
 
 .contactInfo__item {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 20px;
-  padding: 10px;
-  width: 70%;
   border: 2px solid transparent;
+  padding: 10px;
+  width: 100%;
+  margin-left: -10px;
+
+  @include mqueryheight(900) {
+    margin-top: 20px;
+  }
+
+  @include mquery(1100) {
+    width: 70%;
+    margin-left: 0;
+  }
 }
 
 .contactInfo__itemIcon {
@@ -67,16 +131,36 @@
 
 .contactInfo__itemText {
   color: white;
-  font-size: 20px;
   margin-left: 20px;
+  font-size: 14px;
+
+  @include mquery(1100) {
+    font-size: 20px;
+  }
 }
 
 .contactForm__container {
-  width: 50%;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  padding: 50px;
+  width: 100%;
+  height: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+
+  @include mquery(800) {
+    padding: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  @include mquery(1100) {
+    width: 60%;
+  }
+
+  @include mquery(1400) {
+    width: 50%;
+  }
 }
 
 .contactForm {
@@ -88,15 +172,25 @@
   align-items: flex-start;
 
   box-sizing: border-box;
-  padding: 20px;
   position: relative;
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  @include mquery(400) {
+    padding: 20px;
+  }
 }
 
 .inputAndLabelContainer {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
+
+  @include mquery(400) {
+    margin-top: 20px;
+  }
 }
 
 .label {
@@ -115,6 +209,16 @@
     outline: none;
     border: 1px solid $main-color;
   }
+
+  &Invalid {
+    @extend .input;
+    border: 1px solid $error;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $error;
+    }
+  }
 }
 
 .inputContainer {
@@ -132,12 +236,19 @@
     @extend .inputIcon;
     color: $main-color;
   }
+
+  &Error {
+    @extend .inputIcon;
+    color: $error;
+  }
 }
 
 .textarea {
   width: 100%;
   max-width: 100%;
+  min-width: 100%;
   max-height: 200px;
+  min-height: 70px;
   padding: 20px;
   font-family: 'Montserrat';
   border-radius: 4px;
@@ -147,11 +258,21 @@
     outline: none;
     border: 1px solid $main-color;
   }
+
+  &Error {
+    @extend .textarea;
+    border: 1px solid $error;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $error;
+    }
+  }
 }
 
 .submitButton {
   position: absolute;
-  bottom: 30px;
+  bottom: 10px;
   right: 30px;
   border: 7px solid;
   border-image-slice: 1;
@@ -165,6 +286,17 @@
   border-radius: 4px;
   font-size: 18px;
   font-weight: bold;
+
+  @include mqueryheight(500) {
+    padding: 10px;
+    font-size: 16px;
+    bottom: 10px;
+    right: 20px;
+  }
+
+  @include mquery(400) {
+    bottom: 30px;
+  }
 }
 
 .close__buttonContainer {
@@ -178,4 +310,10 @@
 .close__button {
   font-size: 40px;
   color: $main-color;
+}
+
+.input__error {
+  margin-top: 5px;
+  font-size: 13px;
+  color: $error;
 }

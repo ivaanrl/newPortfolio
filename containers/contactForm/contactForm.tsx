@@ -9,6 +9,7 @@ import envelopeFill from '@iconify/icons-bi/envelope-fill';
 import personIcon from '@iconify/icons-bi/person';
 import envelopeClosed from '@iconify/icons-cil/envelope-closed';
 import closeFill from '@iconify/icons-eva/close-fill';
+import { contactFormValidationSchema } from './validationSchema';
 
 interface Props {
   hideContactForm: () => void;
@@ -57,6 +58,9 @@ const ContactForm = ({ hideContactForm }: Props) => {
         'user_Tqu4Qb768TWFhX3VukiG7',
       );
     },
+    validationSchema: contactFormValidationSchema,
+    validateOnBlur: true,
+    validateOnChange: true,
   });
 
   const [nameFocus, setNameFocus] = useState<boolean>(false);
@@ -143,11 +147,19 @@ const ContactForm = ({ hideContactForm }: Props) => {
                 <Icon
                   icon={personIcon}
                   className={
-                    nameFocus ? styles.inputIcon__focus : styles.inputIcon
+                    formik.touched.name && formik.errors.name
+                      ? styles.inputIconError
+                      : nameFocus
+                      ? styles.inputIcon__focus
+                      : styles.inputIcon
                   }
                 />
                 <input
-                  className={styles.input}
+                  className={
+                    formik.touched.name && formik.errors.name
+                      ? styles.inputInvalid
+                      : styles.input
+                  }
                   id="name"
                   name="name"
                   type="text"
@@ -155,9 +167,15 @@ const ContactForm = ({ hideContactForm }: Props) => {
                   value={formik.values.name}
                   autoFocus={true}
                   onFocus={() => setNameFocus(true)}
-                  onBlur={() => setNameFocus(false)}
+                  onBlur={(e) => {
+                    setNameFocus(false);
+                    formik.handleBlur(e);
+                  }}
                 />
               </div>
+              {formik.touched.name && formik.errors.name ? (
+                <div className={styles.input__error}>{formik.errors.name}</div>
+              ) : null}
             </div>
             <div className={styles.inputAndLabelContainer}>
               <label className={styles.label}>Email</label>
@@ -165,33 +183,57 @@ const ContactForm = ({ hideContactForm }: Props) => {
                 <Icon
                   icon={envelopeClosed}
                   className={
-                    emailFocus ? styles.inputIcon__focus : styles.inputIcon
+                    formik.touched.email && formik.errors.email
+                      ? styles.inputIconError
+                      : emailFocus
+                      ? styles.inputIcon__focus
+                      : styles.inputIcon
                   }
                   style={{
                     top: 'calc(50% - 12px)',
                   }}
                 />
                 <input
-                  className={styles.input}
+                  className={
+                    formik.touched.email && formik.errors.email
+                      ? styles.inputInvalid
+                      : styles.input
+                  }
                   id="email"
                   name="email"
                   type="email"
                   onChange={formik.handleChange}
                   value={formik.values.email}
                   onFocus={() => setEmailFocus(true)}
-                  onBlur={() => setEmailFocus(false)}
+                  onBlur={(e) => {
+                    setEmailFocus(false);
+                    formik.handleBlur(e);
+                  }}
                 />
               </div>
+              {formik.touched.email && formik.errors.email ? (
+                <div className={styles.input__error}>{formik.errors.email}</div>
+              ) : null}
             </div>
             <div className={styles.inputAndLabelContainer}>
               <label className={styles.label}>Message</label>
               <textarea
-                className={styles.textarea}
+                className={
+                  formik.touched.message && formik.errors.message
+                    ? styles.textareaError
+                    : styles.textarea
+                }
                 id="message"
                 name="message"
                 onChange={formik.handleChange}
                 value={formik.values.message}
+                onBlur={formik.handleBlur}
               />
+              {formik.touched.message && formik.errors.message ? (
+                <div className={styles.input__error}>
+                  {formik.errors.message}
+                </div>
+              ) : null}
             </div>
 
             <motion.button

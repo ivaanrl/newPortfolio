@@ -3,7 +3,6 @@ import LeftALignedProject from './leftAlignedProject/leftAlignedProject';
 import RightALignedProject from './rightAlignedProject/rightAlignedProject';
 import { motion, useViewportScroll } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import FirstProject from './firstProject';
 import Project from './project';
 
 const Projects = () => {

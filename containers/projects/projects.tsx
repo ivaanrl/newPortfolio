@@ -1,6 +1,4 @@
 import styles from '../../styles/projects.module.scss';
-import LeftALignedProject from './leftAlignedProject/leftAlignedProject';
-import RightALignedProject from './rightAlignedProject/rightAlignedProject';
 import { motion, useViewportScroll } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import Project from './project';

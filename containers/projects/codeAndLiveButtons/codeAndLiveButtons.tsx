@@ -1,7 +1,11 @@
 import styles from '../../../styles/codeAndLiveButtons.module.scss';
 import { motion } from 'framer-motion';
 
-const CodeAndLiveButtons = () => {
+interface Props {
+  color: string;
+}
+
+const CodeAndLiveButtons = ({ color }: Props) => {
   return (
     <motion.div
       whileHover={{
@@ -12,24 +16,36 @@ const CodeAndLiveButtons = () => {
       <motion.button
         whileHover={{
           backgroundColor: '#ffffff',
-          color: '#c30017',
+          color: color,
           borderImageSlice: 1,
-          borderImageSource:
-            'linear-gradient(200.54deg,#ffffff 100%,#000000 0%)',
+          borderImageSource: `linear-gradient(200.54deg,#ffffff 100%,${color} 0%)`,
         }}
         className={styles.button__left}
+        style={{
+          borderImageSource: `linear-gradient(
+            200.54deg,
+            #ffffff 62.45%,
+            ${color} 62.46%
+          );`,
+        }}
       >
         CODE
       </motion.button>
       <motion.button
         whileHover={{
           backgroundColor: '#ffffff',
-          color: '#c30017',
+          color: color,
           borderImageSlice: 1,
-          borderImageSource:
-            'linear-gradient(150.6deg,#ffffff 100%,#000000 0%)',
+          borderImageSource: `linear-gradient(150.6deg,#ffffff 100%, ${color} 0%)`,
         }}
         className={styles.button__right}
+        style={{
+          borderImageSource: `linear-gradient(
+            150.6deg,
+            #ffffff 74.52%,
+            ${color} 75.11%
+          );`,
+        }}
       >
         LIVE SITE
       </motion.button>

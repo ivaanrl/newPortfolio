@@ -8,17 +8,18 @@
 .content__container {
   margin: auto;
   height: 60vh;
-  background-color: #c30017;
+  //background-color: #c30017;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
+  overflow-x: hidden;
   overflow-y: hidden;
   position: relative;
   width: 85%;
 
-  @include mqueryheight(600) {
-    height: 80vh;
+  @include mqueryheight(500) {
+    height: 90vh;
   }
 
   @include mqueryheight(900) {
@@ -49,7 +50,6 @@
 
   //box-shadow: 90px -24px 98px -18px rgba(0, 0, 0, 0.75);
 
-  box-shadow: 71px 49px 76px 6px rgba(0, 0, 0, 0.45);
   transform: scale(1, 1);
 
   margin-bottom: -10px;
@@ -68,6 +68,44 @@
   @include mquery(900) {
     width: 15%;
   }
+
+  &__shadow {
+    @extend .image__container;
+    box-shadow: 71px 49px 76px 6px rgba(0, 0, 0, 0.45);
+  }
+
+  &__wide {
+    width: 90%;
+
+    @include mquery(600) {
+      width: 70%;
+    }
+
+    @include mquery(750) {
+      width: 60%;
+    }
+
+    @include mquery(800) {
+      width: 50%;
+    }
+
+    @include mquery(1000) {
+      width: 45%;
+    }
+
+    margin-right: 0;
+  }
+
+  &__leftAligned {
+    margin-left: 20px;
+    align-self: flex-start;
+
+    @include mquery(1000) {
+      margin-left: 50px;
+      order: -1;
+      align-self: auto;
+    }
+  }
 }
 
 .image {
@@ -75,23 +113,38 @@
 }
 
 .text__container {
-  align-self: flex-start;
-
   height: 100%;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 
-  padding-left: 40px;
   padding-top: 40px;
   padding-bottom: 50px;
+
+  &__alignedLeft {
+    align-self: flex-start;
+    padding-left: 40px;
+  }
+
+  &__alignedRight {
+    align-self: flex-end;
+    padding-left: 20px;
+
+    @include mquery(450) {
+      padding-left: 0;
+      padding-right: 40px;
+    }
+  }
 }
 
 .text__title {
   color: white;
   font-weight: bold;
-  font-size: 45px;
+  font-size: 40px;
+  @include mquery(400) {
+    font-size: 45px;
+  }
 }
 
 .text__technologies {
@@ -104,8 +157,15 @@
 .svg__button {
   position: absolute;
   bottom: 20px;
-  left: 20px;
   color: white;
   background-color: transparent;
   border: none;
+
+  &__leftAligned {
+    left: 20px;
+  }
+
+  &__rightAligned {
+    right: 20px;
+  }
 }

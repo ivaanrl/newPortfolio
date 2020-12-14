@@ -4,6 +4,7 @@ import RightALignedProject from './rightAlignedProject/rightAlignedProject';
 import { motion, useViewportScroll } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import FirstProject from './firstProject';
+import Project from './project';
 
 const Projects = () => {
   const [angle, setAngle] = useState<number>(0);
@@ -35,8 +36,34 @@ const Projects = () => {
         code_link=""
         live_link=""
         /> 
-      */}
         <FirstProject />
+      */}
+        <Project
+          title="Alpalac"
+          technologies="FullStack Dev, UI, UI"
+          color="#c30017"
+          aligned="right"
+          image={{
+            name: 'alpalac_drawing.png',
+            height: 1507,
+            width: 509,
+            hasShadow: true,
+            isWide: false,
+          }}
+        />
+        <Project
+          title="Reddit Clone"
+          technologies="FullStack Dev, React Native, Monorepo"
+          color="#FF4500"
+          image={{
+            name: 'reddit_drawing.png',
+            height: 1184,
+            width: 1263,
+            hasShadow: false,
+            isWide: true,
+          }}
+          aligned="left"
+        />
       </div>
       <div className={styles.github__button_container}>
         <motion.button

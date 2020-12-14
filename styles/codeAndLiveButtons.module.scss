@@ -46,11 +46,7 @@
 
 .button__left {
   @extend .button;
-  border-image-source: linear-gradient(
-    200.54deg,
-    #ffffff 62.45%,
-    #c30017 62.46%
-  );
+
   margin-right: 20px;
 
   @include mquery(600) {
@@ -72,10 +68,4 @@
 
 .button__right {
   @extend .button;
-
-  border-image-source: linear-gradient(
-    150.6deg,
-    #ffffff 74.52%,
-    #c30017 75.11%
-  );
 }

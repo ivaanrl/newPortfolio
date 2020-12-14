@@ -13,34 +13,56 @@ const Projects = () => {
 
   return (
     <>
-      <div className={styles.projects__container}>
+      <div className={styles.container}>
         <p className={styles.projects__title}>Projects</p>
-        <Project
-          title="Alpalac"
-          technologies="FullStack Dev, UI, UI"
-          color="#c30017"
-          aligned="right"
-          image={{
-            name: 'alpalac_drawing.png',
-            height: 1507,
-            width: 509,
-            hasShadow: true,
-            isWide: false,
-          }}
-        />
-        <Project
-          title="Reddit Clone"
-          technologies="FullStack Dev, React Native, Monorepo"
-          color="#FF4500"
-          image={{
-            name: 'reddit_drawing.png',
-            height: 1184,
-            width: 1263,
-            hasShadow: false,
-            isWide: true,
-          }}
-          aligned="left"
-        />
+        <motion.div className={styles.projects__container}>
+          <Project
+            title="Reddit Clone"
+            technologies="FullStack Dev, React Native, Monorepo"
+            color="#FF4500"
+            aligned="left"
+            image={{
+              name: 'reddit_drawing.png',
+              height: 1184,
+              width: 1263,
+              hasShadow: false,
+              isWide: true,
+            }}
+            openCardImage={{
+              name: 'second_project.png',
+              height: 543,
+              width: 1920,
+            }}
+            tags={[
+              'React',
+              'React Native',
+              'Monorepo',
+              'NodeJS/Express',
+              'PostgreSQL',
+              'AWS S3',
+              'Heroku',
+            ]}
+          />
+          <Project
+            title="Alpalac"
+            technologies="FullStack Dev, UI, UI"
+            color="#c30017"
+            aligned="right"
+            image={{
+              name: 'alpalac_drawing.png',
+              height: 1507,
+              width: 509,
+              hasShadow: true,
+              isWide: false,
+            }}
+            openCardImage={{
+              name: 'second_project.png',
+              height: 543,
+              width: 1920,
+            }}
+            tags={['React', 'NodeJS/Express', 'PostgreSQL']}
+          />
+        </motion.div>
       </div>
       <div className={styles.github__button_container}>
         <motion.button

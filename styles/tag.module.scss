@@ -1,0 +1,17 @@
+.tag {
+  font-size: 14px;
+  background-color: rgb(236, 231, 231);
+  padding: 10px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.tags__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}

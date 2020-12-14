@@ -2,13 +2,12 @@
 
 .container {
   width: 100%;
-  margin-top: 160px;
+  height: fit-content;
 }
 
 .content__container {
   margin: auto;
   height: 60vh;
-  //background-color: #c30017;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -17,6 +16,7 @@
   overflow-y: hidden;
   position: relative;
   width: 85%;
+  flex: 0 0 50%;
 
   @include mqueryheight(500) {
     height: 90vh;
@@ -41,6 +41,21 @@
 
   @include mquery(1600) {
     width: 50%;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__open {
+    @extend .container;
+    top: 10vh;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 1;
+    overflow: hidden;
+    height: 80vh;
   }
 }
 
@@ -136,14 +151,34 @@
       padding-right: 40px;
     }
   }
+
+  &__open {
+    align-self: flex-start;
+    height: 100%;
+    width: 100%;
+    flex-basis: 100%;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .text__title {
   color: white;
   font-weight: bold;
   font-size: 40px;
+  position: relative;
   @include mquery(400) {
     font-size: 45px;
+  }
+
+  &__open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 50px;
   }
 }
 
@@ -168,4 +203,47 @@
   &__rightAligned {
     right: 20px;
   }
+}
+
+.overlay {
+  z-index: 1;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  will-change: opacity;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+}
+
+.description {
+  color: white;
+  font-family: 'Montserrat';
+  width: 90%;
+  margin: auto;
+  font-size: 20px;
+  line-height: 1.6em;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-align: justify;
+}
+
+.openCard__imageContainer {
+  //width: 60%;
+  margin: auto;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  right: 10px;
+  z-index: -1;
+  height: 25vh;
+  max-height: 25vh;
+  overflow: hidden;
+  //opacity: 0.8;
+}
+
+.openCard__image {
+  width: 100%;
+  filter: brightness(55%);
 }

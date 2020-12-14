@@ -21,6 +21,12 @@
     padding-top: 40px;
     padding-bottom: 40px;
   } */
+
+  &__open {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+  }
 }
 
 .button {

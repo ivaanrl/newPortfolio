@@ -1,17 +1,19 @@
 import styles from '../../../styles/codeAndLiveButtons.module.scss';
 import { motion } from 'framer-motion';
+import { Dispatch, SetStateAction } from 'react';
 
 interface Props {
   color: string;
+  setFillSVG: Dispatch<SetStateAction<boolean>>;
+  isOpen: boolean;
 }
 
-const CodeAndLiveButtons = ({ color }: Props) => {
+const CodeAndLiveButtons = ({ color, setFillSVG, isOpen }: Props) => {
   return (
     <motion.div
-      whileHover={{
-        scale: 1.1,
-      }}
-      className={styles.buttons__container}
+      className={`${styles.buttons__container}  ${
+        isOpen ? styles.buttons__container__open : null
+      }`}
     >
       <motion.button
         whileHover={{
@@ -19,7 +21,10 @@ const CodeAndLiveButtons = ({ color }: Props) => {
           color: color,
           borderImageSlice: 1,
           borderImageSource: `linear-gradient(200.54deg,#ffffff 100%,${color} 0%)`,
+          scale: 1.1,
         }}
+        onMouseEnter={() => setFillSVG(false)}
+        onMouseLeave={() => setFillSVG(true)}
         className={styles.button__left}
         style={{
           borderImageSource: `linear-gradient(
@@ -37,7 +42,10 @@ const CodeAndLiveButtons = ({ color }: Props) => {
           color: color,
           borderImageSlice: 1,
           borderImageSource: `linear-gradient(150.6deg,#ffffff 100%, ${color} 0%)`,
+          scale: 1.1,
         }}
+        onMouseEnter={() => setFillSVG(false)}
+        onMouseLeave={() => setFillSVG(true)}
         className={styles.button__right}
         style={{
           borderImageSource: `linear-gradient(

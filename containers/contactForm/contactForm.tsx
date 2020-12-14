@@ -42,7 +42,7 @@ const ContactForm = ({ hideContactForm }: Props) => {
     return () => {
       document.body.style.overflow = 'unset';
     };
-  });
+  }, []);
 
   const formik = useFormik({
     initialValues: {

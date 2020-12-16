@@ -19,7 +19,7 @@ const Background = ({ translateX, translateY }: Props) => {
         viewBox="0 0 1024 1536"
         preserveAspectRatio="xMidYMax slice"
       >
-        <g fill="#000000" fill-opacity=".35" transform="translate(55 42)">
+        <g fill="#000000" fillOpacity=".35" transform="translate(55 42)">
           <motion.g
             className={styles.snow__bottomLayer}
             style={{
@@ -69,7 +69,7 @@ const Background = ({ translateX, translateY }: Props) => {
             <ellipse cx="887" cy="598.5" rx="2" ry="2" />
           </motion.g>
         </g>
-        <g fill="#000000" fill-opacity=".55" transform="translate(65 63)">
+        <g fill="#000000" fillOpacity=".55" transform="translate(65 63)">
           <motion.g
             className={styles.snow__topLayer}
             style={{

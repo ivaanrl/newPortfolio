@@ -18,9 +18,26 @@
 
 .projects__container {
   display: grid;
-  grid-template-rows: 45vh 45vh;
-  row-gap: 200px;
+  row-gap: 100px;
   margin-top: 200px;
+  grid-template-rows: 60vh;
+
+  @include mqueryheight(500) {
+    grid-template-rows: 80vh 80vh;
+  }
+
+  @include mqueryheight(900) {
+    grid-template-rows: 65vh 65vh;
+    row-gap: 180px;
+  }
+
+  @include mquery(1000) {
+    flex-direction: row;
+    grid-template-rows: 45vh 45vh;
+  }
+
+  @include mquery(600) {
+  }
 }
 
 .github__button_container {

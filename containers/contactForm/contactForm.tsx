@@ -81,11 +81,16 @@ const ContactForm = ({ hideContactForm }: Props) => {
       >
         <motion.button
           whileHover={{
-            rotate: 360,
-            scale: 1.1,
+            //rotate: 360,
+            //scale: 1.1,
+            color: '#560496',
+            backgroundColor: '#aa3fff',
             transition: {
               duration: 0.5,
             },
+          }}
+          style={{
+            color: '#aa3fff',
           }}
           whileTap={{
             scale: 0.9,

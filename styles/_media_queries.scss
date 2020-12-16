@@ -95,6 +95,10 @@
     @media (min-height: 1366px) {
       @content;
     }
+  } @else if $height == 1100 {
+    @media (min-height: 1100px) {
+      @content;
+    }
   } @else if $height == 700 {
     @media (min-height: 700px) {
       @content;

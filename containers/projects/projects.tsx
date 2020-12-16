@@ -42,6 +42,8 @@ const Projects = () => {
               'AWS S3',
               'Heroku',
             ]}
+            codeLink="https://github.com/ivaanrl/reddit-clone"
+            liveSiteLink="https://awesome-reddit-clone.netlify.app/"
           />
           <Project
             title="Alpalac"
@@ -56,11 +58,13 @@ const Projects = () => {
               isWide: false,
             }}
             openCardImage={{
-              name: 'second_project.png',
-              height: 543,
+              name: 'alpalac.png',
+              height: 545,
               width: 1920,
             }}
-            tags={['React', 'NodeJS/Express', 'PostgreSQL']}
+            tags={['React', 'NodeJS/Express', 'PostgreSQL', 'Material UI']}
+            codeLink="https://github.com/ivaanrl/alpalac"
+            liveSiteLink="https://alpalac.herokuapp.com/"
           />
         </motion.div>
       </div>

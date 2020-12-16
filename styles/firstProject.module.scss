@@ -1,4 +1,5 @@
 @import './media_queries';
+@import './color_scheme';
 
 .container {
   width: 100%;
@@ -49,13 +50,22 @@
 
   &__open {
     @extend .container;
-    top: 10vh;
     left: 0;
     right: 0;
     position: fixed;
     z-index: 1;
     overflow: hidden;
-    height: 80vh;
+    top: 1vh;
+    height: 98vh;
+
+    @include mquery(600) {
+      top: 10vh;
+      height: 80vh;
+    }
+
+    &:hover {
+      cursor: default;
+    }
   }
 }
 
@@ -178,7 +188,11 @@
     justify-content: center;
     text-align: center;
     margin-top: 20px;
-    font-size: 50px;
+    font-size: 30px;
+
+    @include mquery(600) {
+      font-size: 50px;
+    }
   }
 }
 
@@ -222,11 +236,34 @@
   font-family: 'Montserrat';
   width: 90%;
   margin: auto;
-  font-size: 20px;
-  line-height: 1.6em;
+  font-size: 14px;
+  line-height: 1.3em;
   margin-top: 20px;
   margin-bottom: 40px;
   text-align: justify;
+  height: 65%;
+  overflow: scroll;
+  overflow-x: hidden;
+
+  @include mquery(600) {
+    font-size: 20px;
+    line-height: 1.6em;
+    height: 100%;
+  }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid white;
+  }
 }
 
 .openCard__imageContainer {
@@ -241,9 +278,27 @@
   max-height: 25vh;
   overflow: hidden;
   //opacity: 0.8;
+  display: none;
+
+  @include mquery(600) {
+    display: block;
+  }
 }
 
 .openCard__image {
   width: 100%;
   filter: brightness(55%);
+}
+
+.close__buttonContainer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  z-index: 2500;
+}
+
+.close__button {
+  font-size: 24px;
 }

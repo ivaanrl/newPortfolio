@@ -52,7 +52,7 @@ const Navbar = ({ showContactForm }: Props) => {
             className={styles.navbar__logo_image}
           />
         </div>
-        Iván Roldán Lusich
+        <p>Iván Roldán Lusich</p>
       </div>
       <div className={styles.navbar__right__container}>
         <motion.button

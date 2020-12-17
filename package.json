@@ -8,7 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@iconify/icons-ant-design": "^1.1.0",
     "@iconify/icons-bi": "^1.1.0",
+    "@iconify/icons-brandico": "^1.1.0",
     "@iconify/icons-bx": "^1.0.5",
     "@iconify/icons-cib": "^1.1.0",
     "@iconify/icons-cil": "^1.1.0",

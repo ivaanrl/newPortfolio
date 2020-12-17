@@ -3,19 +3,23 @@ import styles from '../../styles/navbar.module.scss';
 
 interface Props {
   toggle: () => void;
+  isOpen: boolean;
 }
 
 const Path = (props: any) => (
   <motion.path strokeWidth="3" strokeLinecap="round" {...props} />
 );
 
-export const MenuToggle = ({ toggle }: Props) => {
+export const MenuToggle = ({ toggle, isOpen }: Props) => {
   return (
     <motion.button
+      style={{
+        backgroundColor: isOpen ? '#aa3fff' : null,
+      }}
       whileHover={{
-        rotate: 360,
+        backgroundColor: '#aa3fff',
         transition: {
-          duration: 1,
+          duration: 0.3,
         },
       }}
       className={styles.navbar__menu__toggle}
@@ -24,22 +28,22 @@ export const MenuToggle = ({ toggle }: Props) => {
       <motion.svg className={styles.navbar__menu_icon} viewBox="0 0 21 21">
         <Path
           variants={{
-            closed: { d: 'M 8 2.5 L 20 2.5', stroke: '#000000' },
-            open: { d: 'M 3 16.5 L 17 2.5', stroke: '#000000' },
+            closed: { d: 'M 8 2.5 L 20 2.5', stroke: '#FFFFFF' },
+            open: { d: 'M 3 16.5 L 17 2.5', stroke: '#FFFFFF' },
           }}
         />
         <Path
           d="M 2 9.423 L 20 9.423"
           variants={{
-            closed: { opacity: 1, stroke: '#000000' },
-            open: { opacity: 0, stroke: '#000000' },
+            closed: { opacity: 1, stroke: '#FFFFFF' },
+            open: { opacity: 0, stroke: '#FFFFFF' },
           }}
           transition={{ duration: 0.1 }}
         />
         <Path
           variants={{
-            closed: { d: 'M 14 16.346 L 20 16.346', stroke: '#000000' },
-            open: { d: 'M 3 2.5 L 17 16.346', stroke: '#000000' },
+            closed: { d: 'M 14 16.346 L 20 16.346', stroke: '#FFFFFF' },
+            open: { d: 'M 3 2.5 L 17 16.346', stroke: '#FFFFFF' },
           }}
         />
       </motion.svg>

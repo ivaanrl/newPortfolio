@@ -122,10 +122,20 @@
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.1.0.tgz#6c9eafc78c1529248f8f4d92b0799a712b6052c6"
   integrity sha512-i9YbZPN3QgfighY/1X1Pu118VUz2Fmmhd6b2n0/O8YVgGGfw0FbUYoA97k7FkpGJ+pLCFEDLUmAPPV4D1kpeFw==
 
+"@iconify/icons-ant-design@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-ant-design/-/icons-ant-design-1.1.0.tgz#013574b09d8dd167490e6fd6dd0b2805d7170854"
+  integrity sha512-sE4NKXMfN9arTFmfvt4zARoS+hjhd8P0z5osjWYxVkQPCri1RYpF+NRa9MsDh3ScqAcSU9wfUeQ3X4Gf8GrcNQ==
+
 "@iconify/icons-bi@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@iconify/icons-bi/-/icons-bi-1.1.0.tgz#f1fa17625fe1c4800f0083adcbd295ec2c5d1294"
   integrity sha512-1YcKuayjyEanBmrpflgW+m4RMQP2PbXJQgTctcha47KLhN5i9tjejEGBpBlrIJ+137HQje8iZ5TJxVT5Nab/hw==
+
+"@iconify/icons-brandico@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-brandico/-/icons-brandico-1.1.0.tgz#8a6b8b3c67f967b067b207985974fa6cad984984"
+  integrity sha512-POyskswytrlbekUamxdGNvYvCDg2Fa1mn7MNvcgOe1hIoDo48g5HRUE4nFqsoE/n0WftD0oX8fJaRWQjYQi2+w==
 
 "@iconify/icons-bx@^1.0.5":
   version "1.0.5"

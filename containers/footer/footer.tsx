@@ -5,7 +5,7 @@ import { useState } from 'react';
 interface Props {
   showContactForm: () => void;
 }
-const Footer = ({ showContactForm }) => {
+const Footer = ({ showContactForm }: Props) => {
   const [isBeingHovered, setIsBeingHovered] = useState<boolean>(false);
 
   return (

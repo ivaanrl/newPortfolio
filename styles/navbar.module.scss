@@ -11,6 +11,10 @@
   padding-left: 10px;
   padding-right: 10px;
   width: 100%;
+  position: fixed;
+  z-index: 20000;
+  background-color: white;
+  padding-bottom: 10px;
 
   @include mquery(1100) {
     padding-right: 100px;

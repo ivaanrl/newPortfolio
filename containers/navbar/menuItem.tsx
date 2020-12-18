@@ -4,6 +4,9 @@ import styles from '../../styles/navbar.module.scss';
 
 interface Props {
   label: string;
+  id: string;
+  hideSidebar: () => void;
+  showContactForm?: () => void;
 }
 
 const variants = {
@@ -24,8 +27,13 @@ const variants = {
   },
 };
 
-const MenuItem = ({ label }: Props) => {
+const MenuItem = ({ label, id, hideSidebar, showContactForm }: Props) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
+
+  const handleClick = () => {
+    hideSidebar();
+    if (showContactForm) showContactForm();
+  };
 
   return (
     <motion.li
@@ -34,27 +42,30 @@ const MenuItem = ({ label }: Props) => {
       //whileHover={{ borderBottom: '1px solid rgb(255,255,255)' }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={handleClick}
     >
-      {' '}
-      {label}{' '}
-      <motion.svg className={styles.mega_menu__liSVG}>
-        <motion.path
-          animate={{
-            pathLength: isHovered ? 1 : 0,
-            transition: {
-              duration: 0.3,
-            },
-          }}
-          d="M 0,0
-            L 500,0
+      <a href={showContactForm ? null : `/#${id}`}>
+        {' '}
+        {label}{' '}
+        <motion.svg className={styles.mega_menu__liSVG}>
+          <motion.path
+            animate={{
+              pathLength: isHovered ? 1 : 0,
+              transition: {
+                duration: 0.3,
+              },
+            }}
+            d="M 0,0
+          L 500,0
           "
-          initial={{
-            pathLength: 0,
-          }}
-          stroke="rgba(255,255,255,0.7)"
-          strokeWidth="10px"
-        />
-      </motion.svg>
+            initial={{
+              pathLength: 0,
+            }}
+            stroke="rgba(255,255,255,0.7)"
+            strokeWidth="10px"
+          />
+        </motion.svg>
+      </a>
     </motion.li>
   );
 };

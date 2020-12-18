@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <div className={styles.hero__container}>
+    <div className={styles.hero__container} id="hero">
       <div className={styles.hero__secondary_background} />
       <div className={styles.hero__text_container}>
         <p className={styles.hero__text}>

@@ -3,15 +3,25 @@ import useWindowDimensions from '../../shared/customHooks/useWindowDimentions';
 import MenuItem from './menuItem';
 import styles from '../../styles/navbar.module.scss';
 import { useEffect, useState } from 'react';
-import { Icon } from '@iconify/react';
+import SocialIcon from './socialIcon';
 import linkedinOutlined from '@iconify/icons-ant-design/linkedin-outlined';
 import instagramOutlined from '@iconify/icons-ant-design/instagram-outlined';
 import youtubeOutlined from '@iconify/icons-ant-design/youtube-outlined';
 import twitterOutlined from '@iconify/icons-ant-design/twitter-outlined';
 
-const navigationItems = ['Home', 'My Projects', 'My Skills', 'Contact'];
+interface Props {
+  showContactForm: () => void;
+  hideSidebar: () => void;
+}
 
-const Navigation = () => {
+const navigationItems = [
+  { label: 'Home', id: 'hero' },
+  { label: 'My Projects', id: 'projects' },
+  { label: 'My Skills', id: 'skills' },
+  { label: 'Contact', id: 'contact' },
+];
+
+const Navigation = ({ hideSidebar, showContactForm }: Props) => {
   const windowDimentions = useWindowDimensions();
   const [height, setHeight] = useState<number>(0);
   const [width, setWidth] = useState<number>(0);
@@ -35,59 +45,23 @@ const Navigation = () => {
   return (
     <motion.div className={styles.sidebar__itemsContainer}>
       <motion.ul variants={variants} className={styles.mega_menu__ul}>
-        {navigationItems.map((navigationItem, index) => {
-          return <MenuItem key={index} label={navigationItem} />;
+        {navigationItems.map(({ label, id }) => {
+          return (
+            <MenuItem
+              key={id}
+              label={label}
+              id={id}
+              hideSidebar={hideSidebar}
+              showContactForm={label === 'Contact' ? showContactForm : null}
+            />
+          );
         })}
       </motion.ul>
       <motion.ul variants={variants} className={styles.sidebar__socials}>
-        <motion.a
-          whileHover={{
-            scale: 1.2,
-            backgroundColor: '#000000',
-          }}
-          whileTap={{
-            scale: 0.95,
-          }}
-          className={styles.socialIcon__container}
-        >
-          <Icon icon={linkedinOutlined} className={styles.socialIcon} />
-        </motion.a>
-        <motion.a
-          whileHover={{
-            scale: 1.2,
-            backgroundColor: '#000000',
-          }}
-          whileTap={{
-            scale: 0.95,
-          }}
-          className={styles.socialIcon__container}
-        >
-          <Icon icon={instagramOutlined} className={styles.socialIcon} />
-        </motion.a>
-        <motion.a
-          whileHover={{
-            scale: 1.2,
-            backgroundColor: '#000000',
-          }}
-          whileTap={{
-            scale: 0.95,
-          }}
-          className={styles.socialIcon__container}
-        >
-          <Icon icon={youtubeOutlined} className={styles.socialIcon} />
-        </motion.a>
-        <motion.a
-          whileHover={{
-            scale: 1.2,
-            backgroundColor: '#000000',
-          }}
-          whileTap={{
-            scale: 0.95,
-          }}
-          className={styles.socialIcon__container}
-        >
-          <Icon icon={twitterOutlined} className={styles.socialIcon} />
-        </motion.a>
+        <SocialIcon icon={linkedinOutlined} />
+        <SocialIcon icon={instagramOutlined} />
+        <SocialIcon icon={youtubeOutlined} />
+        <SocialIcon icon={twitterOutlined} />
       </motion.ul>
     </motion.div>
   );

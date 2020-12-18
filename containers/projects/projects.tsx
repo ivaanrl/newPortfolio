@@ -13,7 +13,7 @@ const Projects = () => {
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.container} id="projects">
         <p className={styles.projects__title}>Projects</p>
         <motion.div className={styles.projects__container}>
           <Project

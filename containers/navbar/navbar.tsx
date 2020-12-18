@@ -1,11 +1,12 @@
 import styles from '../../styles/navbar.module.scss';
 import Image from 'next/image';
-import { useCycle } from 'framer-motion';
+import { useAnimation, useCycle, useViewportScroll } from 'framer-motion';
 import useMeasure from 'react-use-measure';
 import useWindowDimensions from '../../shared/customHooks/useWindowDimentions';
 import { motion } from 'framer-motion';
 import { MenuToggle } from './menuToggle';
 import Navigation from './navigation';
+import { useEffect, useState } from 'react';
 
 interface Props {
   showContactForm: () => void;
@@ -35,13 +36,40 @@ const megaMenu = {
   },
 };
 
+const navbarVariants = {
+  visible: {
+    y: 0,
+  },
+  hidden: {
+    y: -100,
+  },
+};
+
 const Navbar = ({ showContactForm }: Props) => {
   const [ref, { height }] = useMeasure();
   const [isOpen, toggleOpen] = useCycle(false, true);
   const windowDimensions = useWindowDimensions();
 
+  const navbarAnimationControl = useAnimation();
+  const { scrollYProgress } = useViewportScroll();
+
+  useEffect(() => {
+    scrollYProgress.onChange((v) => {
+      if (scrollYProgress.getVelocity() < 0) {
+        navbarAnimationControl.start('visible');
+      } else {
+        navbarAnimationControl.start('hidden');
+      }
+    });
+  }, [scrollYProgress]);
+
   return (
-    <div className={styles.navbar__container}>
+    <motion.div
+      className={styles.navbar__container}
+      variants={navbarVariants}
+      animate={navbarAnimationControl}
+      initial="visible"
+    >
       <div className={styles.navbar__logo__container}>
         <div className={styles.navbar__logo_image__container}>
           <Image
@@ -86,12 +114,15 @@ const Navbar = ({ showContactForm }: Props) => {
             className={styles.mega_menu__background}
             variants={megaMenu}
           >
-            <Navigation />
+            <Navigation
+              showContactForm={showContactForm}
+              hideSidebar={toggleOpen}
+            />
           </motion.div>
           <MenuToggle toggle={() => toggleOpen()} isOpen={isOpen} />
         </motion.nav>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

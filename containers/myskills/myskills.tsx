@@ -18,7 +18,7 @@ const Myskills = () => {
 
   return (
     <>
-      <div className={styles.main__container}>
+      <div className={styles.main__container} id="skills">
         <p className={styles.title}>
           MY <br />
           SKILLS

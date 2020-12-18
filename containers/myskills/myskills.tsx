@@ -43,15 +43,6 @@ const Myskills = () => {
             </motion.p>
             <motion.div
               animate={{
-                rotate: frontendHover ? [0, 360] : [0, 0],
-                color: frontendHover ? '#ffffff' : '#8b9492',
-              }}
-              transition={{
-                duration: 1,
-                ease: 'easeInOut',
-                times: [0, 1],
-                loop: 0,
-                repeatDelay: 0,
                 color: frontendHover ? '#ffffff' : '#8b9492',
               }}
               className={styles.skill_icon}
@@ -78,15 +69,6 @@ const Myskills = () => {
             </motion.p>
             <motion.div
               animate={{
-                rotate: backendHover ? [0, 360] : [0, 0],
-                color: backendHover ? '#ffffff' : '#8b9492',
-              }}
-              transition={{
-                duration: 1,
-                ease: 'easeInOut',
-                times: [0, 1],
-                loop: 0,
-                repeatDelay: 0,
                 color: backendHover ? '#ffffff' : '#8b9492',
               }}
               className={styles.skill_icon}
@@ -120,15 +102,6 @@ const Myskills = () => {
             </motion.p>
             <motion.div
               animate={{
-                rotate: othersHover ? [0, 360] : [0, 0],
-                color: othersHover ? '#ffffff' : '#8b9492',
-              }}
-              transition={{
-                duration: 1,
-                ease: 'easeInOut',
-                times: [0, 1],
-                loop: 0,
-                repeatDelay: 0,
                 color: othersHover ? '#ffffff' : '#8b9492',
               }}
               className={styles.skill_icon}

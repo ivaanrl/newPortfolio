@@ -39,6 +39,9 @@ const megaMenu = {
 const navbarVariants = {
   visible: {
     y: 0,
+    transition: {
+      duration: 0.05,
+    },
   },
   hidden: {
     y: -100,

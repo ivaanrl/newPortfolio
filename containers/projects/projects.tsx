@@ -4,13 +4,6 @@ import { useEffect, useState } from 'react';
 import Project from './project';
 
 const Projects = () => {
-  const [angle, setAngle] = useState<number>(0);
-  const { scrollYProgress } = useViewportScroll();
-
-  useEffect(() => {
-    return scrollYProgress.onChange((v) => setAngle(v));
-  }, [scrollYProgress]);
-
   return (
     <>
       <div className={styles.container} id="projects">
@@ -70,19 +63,11 @@ const Projects = () => {
       </div>
       <div className={styles.github__button_container}>
         <motion.button
-          animate={{
-            borderImageSource: `linear-gradient(
-              ${angle * 360}deg,
-              #ff77c9 ${angle * 100}%,
-              #aa3fff 100%
-            )`,
-          }}
           whileHover={{
             scale: 1.1,
             backgroundColor: '#000000',
             color: '#ffffff',
-            borderImageSource:
-              'linear-gradient(101.96deg,#000000 100%,#000000 100%)',
+            borderColor: '#000000',
           }}
           className={styles.github__button}
         >

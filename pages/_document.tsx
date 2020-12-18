@@ -32,6 +32,10 @@ class MyDocument extends Document {
             sizes="32x32"
           />
           <meta name="theme-color" content="#000000" />
+          <meta
+            name="description"
+            content="Ivan Roldan Lusich personal website. You can find his projects, skills and blogs here,"
+          />
         </Head>
         <body>
           <Main />

@@ -294,10 +294,12 @@ const Project = ({
               loading="eager"
               quality={10}
               src={`/images/${name}`}
+              alt={`${name} screenshot`}
               className={styles.image}
             />
           </motion.p>
           <motion.button
+            aria-label="expand project"
             className={`${styles.svg__button} ${
               aligned === 'left'
                 ? styles.svg__button__rightAligned

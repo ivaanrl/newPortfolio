@@ -13,6 +13,7 @@ const Path = (props: any) => (
 export const MenuToggle = ({ toggle, isOpen }: Props) => {
   return (
     <motion.button
+      aria-label="sidebar toggle"
       style={{
         backgroundColor: isOpen ? '#aa3fff' : null,
       }}

@@ -35,7 +35,7 @@ const Myskills = () => {
           >
             <motion.p
               animate={{
-                color: frontendHover ? '#ffffff' : '#8b9492',
+                color: frontendHover ? '#ffffff' : '#000000',
               }}
               className={styles.skill__title}
             >
@@ -43,7 +43,7 @@ const Myskills = () => {
             </motion.p>
             <motion.div
               animate={{
-                color: frontendHover ? '#ffffff' : '#8b9492',
+                color: frontendHover ? '#ffffff' : '#000000',
               }}
               className={styles.skill_icon}
             >
@@ -61,7 +61,7 @@ const Myskills = () => {
           >
             <motion.p
               animate={{
-                color: backendHover ? '#ffffff' : '#8b9492',
+                color: backendHover ? '#ffffff' : '#000000',
               }}
               className={styles.skill__title}
             >
@@ -69,7 +69,7 @@ const Myskills = () => {
             </motion.p>
             <motion.div
               animate={{
-                color: backendHover ? '#ffffff' : '#8b9492',
+                color: backendHover ? '#ffffff' : '#000000',
               }}
               className={styles.skill_icon}
             >
@@ -94,7 +94,7 @@ const Myskills = () => {
           >
             <motion.p
               animate={{
-                color: othersHover ? '#ffffff' : '#8b9492',
+                color: othersHover ? '#ffffff' : '#000000',
               }}
               className={styles.skill__title}
             >
@@ -102,7 +102,7 @@ const Myskills = () => {
             </motion.p>
             <motion.div
               animate={{
-                color: othersHover ? '#ffffff' : '#8b9492',
+                color: othersHover ? '#ffffff' : '#000000',
               }}
               className={styles.skill_icon}
             >

@@ -17,7 +17,7 @@ interface Props {
 
 const SocialIcon = ({ icon }: Props) => {
   return (
-    <motion.a
+    <motion.li
       whileHover={{
         scale: 1.2,
         backgroundColor: '#000000',
@@ -27,8 +27,10 @@ const SocialIcon = ({ icon }: Props) => {
       }}
       className={styles.socialIcon__container}
     >
-      <Icon icon={icon} className={styles.socialIcon} />
-    </motion.a>
+      <a>
+        <Icon icon={icon} className={styles.socialIcon} />
+      </a>
+    </motion.li>
   );
 };
 

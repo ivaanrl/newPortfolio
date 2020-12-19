@@ -7,6 +7,7 @@ import typescriptIcon from '@iconify/icons-cib/typescript';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import SkillsCard from './skillsCard/skillsCard';
+import { theme } from '../../styles/theme';
 
 const Myskills = () => {
   const [frontendHover, setFrontendHover] = useState<boolean>(false);
@@ -30,12 +31,14 @@ const Myskills = () => {
             onClick={() => setPage(0)}
             className={styles.skill__container}
             animate={{
-              backgroundColor: frontendHover ? '#ff77c9' : '#ffffff',
+              backgroundColor: frontendHover
+                ? theme.secondaryColor
+                : theme.white,
             }}
           >
             <motion.p
               animate={{
-                color: frontendHover ? '#ffffff' : '#000000',
+                color: frontendHover ? theme.white : theme.mutedTextOnWhite,
               }}
               className={styles.skill__title}
             >
@@ -43,7 +46,7 @@ const Myskills = () => {
             </motion.p>
             <motion.div
               animate={{
-                color: frontendHover ? '#ffffff' : '#000000',
+                color: frontendHover ? theme.white : theme.mutedTextOnWhite,
               }}
               className={styles.skill_icon}
             >
@@ -56,12 +59,14 @@ const Myskills = () => {
             onClick={() => setPage(1)}
             className={styles.skill__container}
             animate={{
-              backgroundColor: backendHover ? '#ff77c9' : '#ffffff',
+              backgroundColor: backendHover
+                ? theme.secondaryColor
+                : theme.white,
             }}
           >
             <motion.p
               animate={{
-                color: backendHover ? '#ffffff' : '#000000',
+                color: backendHover ? theme.white : theme.mutedTextOnWhite,
               }}
               className={styles.skill__title}
             >
@@ -69,7 +74,7 @@ const Myskills = () => {
             </motion.p>
             <motion.div
               animate={{
-                color: backendHover ? '#ffffff' : '#000000',
+                color: backendHover ? theme.white : theme.mutedTextOnWhite,
               }}
               className={styles.skill_icon}
             >
@@ -89,12 +94,12 @@ const Myskills = () => {
             onClick={() => setPage(2)}
             className={styles.skill__container}
             animate={{
-              backgroundColor: othersHover ? '#ff77c9' : '#ffffff',
+              backgroundColor: othersHover ? theme.secondaryColor : theme.white,
             }}
           >
             <motion.p
               animate={{
-                color: othersHover ? '#ffffff' : '#000000',
+                color: othersHover ? theme.white : theme.mutedTextOnWhite,
               }}
               className={styles.skill__title}
             >
@@ -102,7 +107,7 @@ const Myskills = () => {
             </motion.p>
             <motion.div
               animate={{
-                color: othersHover ? '#ffffff' : '#000000',
+                color: othersHover ? theme.white : theme.mutedTextOnWhite,
               }}
               className={styles.skill_icon}
             >

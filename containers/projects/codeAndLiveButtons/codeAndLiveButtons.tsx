@@ -2,6 +2,7 @@ import styles from '../../../styles/codeAndLiveButtons.module.scss';
 import { motion } from 'framer-motion';
 import { Dispatch, SetStateAction, useRef } from 'react';
 import { usePreventClickPropagation } from '../../../shared/customHooks/usePreventClickPropagation';
+import { theme } from '../../../styles/theme';
 
 interface Props {
   color: string;
@@ -37,10 +38,10 @@ const CodeAndLiveButtons = ({
     >
       <motion.button
         whileHover={{
-          backgroundColor: '#ffffff',
+          backgroundColor: theme.white,
           color: color,
           borderImageSlice: 1,
-          borderImageSource: `linear-gradient(200.54deg,#ffffff 100%,${color} 0%)`,
+          borderImageSource: `linear-gradient(200.54deg,${theme.white} 100%,${color} 0%)`,
           scale: 1.1,
         }}
         onClick={(e) => openInNewTab(e, codeLink)}
@@ -50,7 +51,7 @@ const CodeAndLiveButtons = ({
         style={{
           borderImageSource: `linear-gradient(
             200.54deg,
-            #ffffff 62.45%,
+            ${theme.white} 62.45%,
             ${color} 62.46%
           )`,
         }}
@@ -60,10 +61,10 @@ const CodeAndLiveButtons = ({
       <motion.button
         onClick={(e) => openInNewTab(e, liveSiteLink)}
         whileHover={{
-          backgroundColor: '#ffffff',
+          backgroundColor: theme.white,
           color: color,
           borderImageSlice: 1,
-          borderImageSource: `linear-gradient(150.6deg,#ffffff 100%, ${color} 0%)`,
+          borderImageSource: `linear-gradient(150.6deg,${theme.white} 100%, ${color} 0%)`,
           scale: 1.1,
         }}
         onMouseEnter={() => setFillSVG(false)}
@@ -72,7 +73,7 @@ const CodeAndLiveButtons = ({
         style={{
           borderImageSource: `linear-gradient(
             150.6deg,
-            #ffffff 74.52%,
+            ${theme.white} 74.52%,
             ${color} 75.11%
             )`,
         }}

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import styles from '../../../../styles/skillsHeader.module.scss';
+import { theme } from '../../../../styles/theme';
 
 interface Props {
   setPage: (page: 0 | 1 | 2 | 3) => void;
@@ -15,11 +16,11 @@ const HeaderItem = ({ page, setPage, title, selectedPage }: Props) => {
         page === selectedPage
           ? {
               fontSize: '40px',
-              color: '#ffffff',
+              color: theme.white,
             }
           : {
               fontSize: '20px',
-              color: '#545c5a',
+              color: theme.mutedTextOnWhite,
             }
       }
       whileHover={{ scale: 1.2 }}
@@ -45,9 +46,9 @@ const HeaderItem = ({ page, setPage, title, selectedPage }: Props) => {
             page === selectedPage
               ? {
                   height: '100%',
-                  color: '#ffffff',
+                  color: theme.white,
                 }
-              : { height: '50%', color: '#545c5a' }
+              : { height: '50%', color: theme.mutedTextOnWhite }
           }
           className={styles.not_selected__background}
         />

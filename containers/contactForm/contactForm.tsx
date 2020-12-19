@@ -10,6 +10,7 @@ import personIcon from '@iconify/icons-bi/person';
 import envelopeClosed from '@iconify/icons-cil/envelope-closed';
 import closeFill from '@iconify/icons-eva/close-fill';
 import { contactFormValidationSchema } from './validationSchema';
+import { theme } from '../../styles/theme';
 
 interface Props {
   hideContactForm: () => void;
@@ -83,14 +84,14 @@ const ContactForm = ({ hideContactForm }: Props) => {
           whileHover={{
             //rotate: 360,
             //scale: 1.1,
-            color: '#560496',
-            backgroundColor: '#aa3fff',
+            color: theme.mainColorDark,
+            backgroundColor: theme.mainColor,
             transition: {
               duration: 0.5,
             },
           }}
           style={{
-            color: '#aa3fff',
+            color: theme.mainColor,
           }}
           whileTap={{
             scale: 0.9,
@@ -106,9 +107,9 @@ const ContactForm = ({ hideContactForm }: Props) => {
             <div className={styles.contactInfo__itemsContainer}>
               <motion.div
                 whileHover={{
-                  border: '2px solid #aa3fff',
+                  border: `2px solid ${theme.mainColor}`,
                   cursor: 'pointer',
-                  backgroundColor: 'rgba(67,25,100,0.2)',
+                  backgroundColor: theme.mainColorHover,
                 }}
                 className={styles.contactInfo__item}
               >
@@ -123,9 +124,9 @@ const ContactForm = ({ hideContactForm }: Props) => {
               </motion.div>
               <motion.div
                 whileHover={{
-                  border: '2px solid #aa3fff',
+                  border: `2px solid ${theme.mainColor}`,
                   cursor: 'pointer',
-                  backgroundColor: 'rgba(67,25,100,0.2)',
+                  backgroundColor: theme.mainColorHover,
                 }}
                 className={styles.contactInfo__item}
               >
@@ -243,11 +244,10 @@ const ContactForm = ({ hideContactForm }: Props) => {
 
             <motion.button
               whileHover={{
-                backgroundColor: '#560496',
-                color: '#ffffff',
+                backgroundColor: theme.mainColorDark,
+                color: theme.white,
                 borderImageSlice: 1,
-                borderImageSource:
-                  'linear-gradient(200.54deg,#560496 100%,#ffffff 0%)',
+                borderImageSource: `linear-gradient(200.54deg,${theme.mainColorDark} 100%,${theme.white} 0%)`,
                 scale: 1.1,
               }}
               className={styles.submitButton}

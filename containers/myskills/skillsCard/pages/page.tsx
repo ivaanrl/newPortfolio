@@ -1,8 +1,7 @@
 import styles from '../../../../styles/skillsCard.module.scss';
 import AnimatedSkill from '../../animatedSkill';
 import { Icon } from '@iconify/react';
-import { motion, useCycle } from 'framer-motion';
-import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 interface Props {
   skills: (

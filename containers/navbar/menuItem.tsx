@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import styles from '../../styles/navbar.module.scss';
+import { theme } from '../../styles/theme';
 
 interface Props {
   label: string;
@@ -39,7 +40,6 @@ const MenuItem = ({ label, id, hideSidebar, showContactForm }: Props) => {
     <motion.li
       variants={variants}
       className={styles.mega_menu__li}
-      //whileHover={{ borderBottom: '1px solid rgb(255,255,255)' }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleClick}
@@ -61,7 +61,7 @@ const MenuItem = ({ label, id, hideSidebar, showContactForm }: Props) => {
             initial={{
               pathLength: 0,
             }}
-            stroke="rgba(255,255,255,0.7)"
+            stroke={theme.sidebarStroke}
             strokeWidth="10px"
           />
         </motion.svg>

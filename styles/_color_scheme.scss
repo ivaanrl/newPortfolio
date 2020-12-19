@@ -1,8 +1,18 @@
-$main-color-light: #5f1994;
-$main-color: #aa3fff;
-$main-color-dark: #560496;
-$secondary-color: rgb(247, 151, 209);
-$transparent-secondary-color: rgba(247, 151, 209, 0.75);
-$muted-text: #8b9492;
-$muted-text-on-white: #545c5a;
-$error: #eb2020;
+$main-color-light: #5f1994; //5f1994
+$main-color: #2e4cf8; //aa3fff
+$main-color-dark: #070488; //560496
+$main-color-hover: rgba(67, 25, 100, 0.2); //rgba(67, 25, 100, 0.2)
+$secondary-color: rgb(64, 141, 241);
+$transparent-secondary-color: rgba(
+  64,
+  141,
+  241,
+  0.75
+); //rgba(247, 151, 209, 0.75)
+$muted-text: #8b9492; //8b9492
+$muted-text-on-white: #545c5a; //545c5a
+$error: #eb2020; //eb2020
+$sidebar-stroke: rgba(255, 255, 255, 0.7); //rgba(255, 255, 255, 0.7)
+$project-hover-shadow: rgba(0, 0, 0, 0.75); //rgba(0, 0, 0, 0.75)
+$transparent: rgba(255, 255, 255, 0);
+$opaque-white: rgb(236, 231, 231); //rgb(236, 231, 231)

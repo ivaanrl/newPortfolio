@@ -1,0 +1,17 @@
+export const theme = {
+  mainColorLight: '#5f1994',
+  mainColor: '#0328fa',
+  mainColorDark: '#070488',
+  mainColorHover: 'rgba(67, 25, 100, 0.2)',
+  secondaryColor: 'rgb(64, 141, 241)',
+  transparentSecondaryColor: 'rgba(64, 141, 241, 0.75)',
+  mutedText: '#8b9492',
+  mutedTextOnWhite: '#545c5a',
+  error: '#eb2020',
+  dark: '#000000',
+  white: '#ffffff',
+  sidebarStroke: 'rgba(255,255,255,0.7)',
+  projectHoverShadow: 'rgba(0,0,0,0.75)',
+  transparent: 'rgba(255,255,255,0)',
+  opaqueWhite: 'rgb(236, 231, 231)',
+};

@@ -1,6 +1,7 @@
 import styles from '../../styles/footer.module.scss';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { theme } from '../../styles/theme';
 
 interface Props {
   showContactForm: () => void;
@@ -16,10 +17,9 @@ const Footer = ({ showContactForm }: Props) => {
       <motion.button
         whileHover={{
           scale: 1.2,
-          color: '#000000',
-          backgroundColor: '#ffffff',
-          borderImageSource:
-            'linear-gradient(175.6deg,#FFFFFF 100%,#000000 0%)',
+          color: theme.dark,
+          backgroundColor: theme.white,
+          borderImageSource: `linear-gradient(175.6deg,${theme.white} 100%,${theme.dark} 0%)`,
         }}
         onMouseEnter={() => setIsBeingHovered(true)}
         onMouseLeave={() => setIsBeingHovered(false)}
@@ -38,12 +38,12 @@ const Footer = ({ showContactForm }: Props) => {
       >
         <path
           d="M28.5723 1L1 30.8846V69.1154L28.5723 99H70.4277L98 69.1154V30.8846L70.4277 1H28.5723Z"
-          stroke="#560496"
+          stroke={theme.mainColorDark}
         />
         <g clipPath="url(#clip0)">
           <path
             d="M39.0794 71.9996V42.3128H30.5049V71.9996H39.0794ZM34.7932 38.2571C37.7833 38.2571 39.6445 35.9775 39.6445 33.1288C39.5888 30.2158 37.7834 27.9995 34.85 27.9995C31.917 27.9995 29.999 30.2159 29.999 33.1288C29.999 35.9777 31.8597 38.2571 34.7373 38.2571H34.793H34.7932ZM43.8253 71.9996H52.3997V55.421C52.3997 54.5338 52.4554 53.6474 52.6819 53.0132C53.3017 51.2404 54.7126 49.4044 57.0812 49.4044C60.1839 49.4044 61.4252 52.1268 61.4252 56.1176V71.9993H69.9991V54.9772C69.9991 45.8586 65.7689 41.6158 60.1275 41.6158C55.5019 41.6158 53.471 44.5912 52.3427 46.6177H52.3999V42.3122H43.8255C43.938 45.0978 43.8255 71.9989 43.8255 71.9989L43.8253 71.9996Z"
-            fill="#560496"
+            fill={theme.mainColorDark}
           />
         </g>
         <defs>

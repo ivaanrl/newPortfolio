@@ -1,5 +1,6 @@
 import styles from '../../styles/hero.module.scss';
 import { motion } from 'framer-motion';
+import { theme } from '../../styles/theme';
 
 const Hero = () => {
   return (
@@ -46,10 +47,17 @@ const Hero = () => {
             width="27"
             height="79"
             rx="13.5"
-            stroke="#AA3FFF"
+            stroke={theme.mainColor}
             strokeWidth="5"
           />
-          <rect x="12" y="42" width="8" height="28" rx="4" fill="#AA3FFF" />
+          <rect
+            x="12"
+            y="42"
+            width="8"
+            height="28"
+            rx="4"
+            fill={theme.mainColor}
+          />
         </svg>
       </motion.div>
     </div>

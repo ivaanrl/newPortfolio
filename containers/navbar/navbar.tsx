@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { MenuToggle } from './menuToggle';
 import Navigation from './navigation';
 import { useEffect, useState } from 'react';
+import { theme } from '../../styles/theme';
 
 interface Props {
   showContactForm: () => void;
@@ -88,8 +89,8 @@ const Navbar = ({ showContactForm }: Props) => {
       <div className={styles.navbar__right__container}>
         <motion.button
           whileHover={{
-            backgroundColor: '#aa3fff',
-            color: '#ffffff',
+            backgroundColor: theme.mainColor,
+            color: theme.white,
           }}
           className={styles.navbar__contact}
           onClick={showContactForm}

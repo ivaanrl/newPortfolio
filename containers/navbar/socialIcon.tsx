@@ -1,6 +1,7 @@
 import { Icon, IconifyIcon } from '@iconify/react';
 import styles from '../../styles/navbar.module.scss';
 import { motion } from 'framer-motion';
+import { theme } from '../../styles/theme';
 
 interface Props {
   icon: {
@@ -20,7 +21,7 @@ const SocialIcon = ({ icon }: Props) => {
     <motion.li
       whileHover={{
         scale: 1.2,
-        backgroundColor: '#000000',
+        backgroundColor: theme.dark,
       }}
       whileTap={{
         scale: 0.95,

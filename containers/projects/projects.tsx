@@ -1,7 +1,7 @@
 import styles from '../../styles/projects.module.scss';
-import { motion, useViewportScroll } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import Project from './project';
+import { theme } from '../../styles/theme';
 
 const Projects = () => {
   return (
@@ -65,9 +65,9 @@ const Projects = () => {
         <motion.button
           whileHover={{
             scale: 1.1,
-            backgroundColor: '#000000',
-            color: '#ffffff',
-            borderColor: '#000000',
+            backgroundColor: theme.dark,
+            color: theme.white,
+            borderColor: theme.dark,
           }}
           className={styles.github__button}
         >

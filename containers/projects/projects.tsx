@@ -10,6 +10,27 @@ const Projects = () => {
         <p className={styles.projects__title}>Projects</p>
         <motion.div className={styles.projects__container}>
           <Project
+            title="Rocket League Air Race"
+            technologies="Frontend developer, UI, UX, Server Admin"
+            color="#f8b100"
+            aligned="right"
+            image={{
+              name: 'rocketleagueairrace_drawing.png',
+              height: 1184,
+              width: 1263,
+              hasShadow: false,
+              isWide: true,
+            }}
+            openCardImage={{
+              name: 'rocketleagueairrace.png',
+              height: 580,
+              width: 1920,
+            }}
+            tags={['React', 'Typescript', 'Digital Ocean', 'Plotly.js']}
+            codeLink="https://github.com/ivaanrl/reddit-clone"
+            liveSiteLink="https://awesome-reddit-clone.netlify.app/"
+          />
+          <Project
             title="Reddit Clone"
             technologies="FullStack Dev, React Native, Monorepo"
             color="#FF4500"
@@ -29,6 +50,7 @@ const Projects = () => {
             tags={[
               'React',
               'React Native',
+              'Typescript',
               'Monorepo',
               'NodeJS/Express',
               'PostgreSQL',
@@ -55,7 +77,13 @@ const Projects = () => {
               height: 545,
               width: 1920,
             }}
-            tags={['React', 'NodeJS/Express', 'PostgreSQL', 'Material UI']}
+            tags={[
+              'React',
+              'Typescript',
+              'NodeJS/Express',
+              'PostgreSQL',
+              'Material UI',
+            ]}
             codeLink="https://github.com/ivaanrl/alpalac"
             liveSiteLink="https://alpalac.herokuapp.com/"
           />

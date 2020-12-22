@@ -18,7 +18,7 @@ const Hero = () => {
           <span>Proactive.</span>
         </p>
         <br />
-        <p className={styles.hero_text}>Creative</p>
+        <p className={styles.hero_text}>Creative.</p>
         <br />
       </div>
       <motion.div

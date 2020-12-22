@@ -16,6 +16,7 @@ interface Props {
 
 const navigationItems = [
   { label: 'Home', id: 'hero' },
+  { label: 'Blog', id: 'blog' },
   { label: 'My Projects', id: 'projects' },
   { label: 'My Skills', id: 'skills' },
   { label: 'Contact', id: 'contact' },

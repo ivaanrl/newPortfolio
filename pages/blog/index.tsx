@@ -3,6 +3,7 @@ import Head from "next/head";
 import PostPreview from "../../containers/postPreview/postPreview";
 import { PostPreview as PostPreviewInterface } from "../../shared/interfaces/post";
 import styles from "../../styles/blog.module.scss";
+import axios from "axios";
 
 interface Props {
   posts: PostPreviewInterface[];
@@ -25,12 +26,15 @@ export default function Blog({ posts }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch("https://dev.to/api/articles?username=ivaanrl");
-  const posts: PostPreviewInterface[] = await res.json();
+  const response = await axios.get<PostPreviewInterface>(
+    "https://dev.to/api/articles?username=ivaanrl"
+  );
 
   return {
     props: {
-      posts,
+      posts: response.data,
     },
+
+    revalidate: 1,
   };
 };

@@ -43,6 +43,7 @@
       display: block;
       margin: auto;
       width: 100%;
+      max-width: 100%;
 
       @include mquery(600) {
         width: 80%;
@@ -64,7 +65,7 @@
   }
 
   code {
-    background-color: $main-color;
+    background-color: $main-color-dark;
     padding: 5px;
     margin-top: 10px;
     margin-bottom: 10px;

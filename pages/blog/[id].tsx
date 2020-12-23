@@ -6,6 +6,7 @@ import {
   PostPreview as PostPreviewInterface,
 } from "../../shared/interfaces/post";
 import Post from "../../containers/post/post";
+import axios from "axios";
 
 interface Props extends PostInterface {}
 
@@ -29,8 +30,10 @@ export default function PostPage({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch("https://dev.to/api/articles?username=ivaanrl");
-  const posts: PostPreviewInterface[] = await res.json();
+  const res = await axios.get<PostPreviewInterface[]>(
+    "https://dev.to/api/articles?username=ivaanrl"
+  );
+  const posts = res.data;
 
   const paths = posts.map((post) => `/blog/${post.id}`);
 
@@ -38,8 +41,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const res = await fetch(`https://dev.to/api/articles/${params.id}`);
-  const post = await res.json();
+  const res = await axios.get(`https://dev.to/api/articles/${params.id}`);
 
-  return { props: post };
+  return { props: res.data };
 };

@@ -42,6 +42,15 @@
     img {
       display: block;
       margin: auto;
+      width: 100%;
+
+      @include mquery(600) {
+        width: 80%;
+      }
+
+      @include mquery(800) {
+        width: auto;
+      }
     }
 
     a {
@@ -61,6 +70,7 @@
     margin-bottom: 10px;
     width: 100%;
     display: block;
+    overflow-x: auto;
   }
 }
 

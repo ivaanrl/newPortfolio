@@ -3,8 +3,8 @@
 
 .container {
   margin: auto;
-  background-color: $main-color-dark;
-  color: white;
+  background-color: white;
+  color: black;
   padding: 35px;
   margin-bottom: 100px;
   position: relative;
@@ -16,7 +16,7 @@
   }
 
   @include mquery(1600) {
-    width: 50%;
+    width: 55%;
   }
 }
 
@@ -71,6 +71,7 @@
     width: 100%;
     display: block;
     overflow-x: auto;
+    color: white;
   }
 }
 

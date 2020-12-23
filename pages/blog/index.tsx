@@ -35,6 +35,6 @@ export const getStaticProps: GetStaticProps = async () => {
       posts: response.data,
     },
 
-    revalidate: 1,
+    revalidate: 360,
   };
 };

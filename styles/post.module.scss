@@ -2,18 +2,29 @@
 @import "./media_queries";
 
 .container {
-  width: 50%;
   margin: auto;
   background-color: $main-color-dark;
   color: white;
   padding: 35px;
   margin-bottom: 100px;
+  position: relative;
+
+  width: 95%;
+
+  @include mquery(1100) {
+    width: 75%;
+  }
+
+  @include mquery(1600) {
+    width: 50%;
+  }
 }
 
 .title {
-  font-size: 30px;
+  font-size: 28px;
   text-align: center;
   margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 .markdown__container {
@@ -51,4 +62,10 @@
     width: 100%;
     display: block;
   }
+}
+
+.createdAt {
+  position: absolute;
+  top: 20px;
+  right: 25px;
 }

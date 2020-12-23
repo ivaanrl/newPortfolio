@@ -11,8 +11,9 @@ interface Props {
 const Post = ({ title, body, createdAt }: Props) => {
   return (
     <div className={styles.container}>
+      <div className={styles.createdAt}>{createdAt}</div>
       <div className={styles.title__container}>
-        <p className={styles.title}>{title}</p>
+        <h1 className={styles.title}>{title}</h1>
       </div>
       <div className={styles.body__container}>
         <ReactMarkdown className={styles.markdown__container} plugins={[gfm]}>

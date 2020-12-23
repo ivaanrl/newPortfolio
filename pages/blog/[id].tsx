@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
+import Head from "next/head";
 import styles from "../../styles/postPage.module.scss";
 import {
   Post as PostInterface,
@@ -15,6 +16,9 @@ export default function PostPage({
 }: Props) {
   return (
     <div className={styles.container}>
+      <Head>
+        <title>{title}</title>
+      </Head>
       <Post
         title={title}
         body={body_markdown}

@@ -1,13 +1,13 @@
-import { motion } from 'framer-motion';
-import useWindowDimensions from '../../shared/customHooks/useWindowDimentions';
-import MenuItem from './menuItem';
-import styles from '../../styles/navbar.module.scss';
-import { useEffect, useState } from 'react';
-import SocialIcon from './socialIcon';
-import linkedinOutlined from '@iconify/icons-ant-design/linkedin-outlined';
-import instagramOutlined from '@iconify/icons-ant-design/instagram-outlined';
-import youtubeOutlined from '@iconify/icons-ant-design/youtube-outlined';
-import twitterOutlined from '@iconify/icons-ant-design/twitter-outlined';
+import { motion } from "framer-motion";
+import useWindowDimensions from "../../shared/customHooks/useWindowDimentions";
+import MenuItem from "./menuItem";
+import styles from "../../styles/navbar.module.scss";
+import { useEffect, useState } from "react";
+import SocialIcon from "./socialIcon";
+import linkedinOutlined from "@iconify/icons-ant-design/linkedin-outlined";
+import instagramOutlined from "@iconify/icons-ant-design/instagram-outlined";
+import youtubeOutlined from "@iconify/icons-ant-design/youtube-outlined";
+import twitterOutlined from "@iconify/icons-ant-design/twitter-outlined";
 
 interface Props {
   showContactForm: () => void;
@@ -15,11 +15,11 @@ interface Props {
 }
 
 const navigationItems = [
-  { label: 'Home', id: 'hero' },
-  { label: 'Blog', id: 'blog' },
-  { label: 'My Projects', id: 'projects' },
-  { label: 'My Skills', id: 'skills' },
-  { label: 'Contact', id: 'contact' },
+  { label: "Home", path: "#hero" },
+  { label: "Blog", path: "blog" },
+  { label: "My Projects", path: "#projects" },
+  { label: "My Skills", path: "#skills" },
+  { label: "Contact", path: "contact" },
 ];
 
 const Navigation = ({ hideSidebar, showContactForm }: Props) => {
@@ -46,14 +46,14 @@ const Navigation = ({ hideSidebar, showContactForm }: Props) => {
   return (
     <motion.div className={styles.sidebar__itemsContainer}>
       <motion.ul variants={variants} className={styles.mega_menu__ul}>
-        {navigationItems.map(({ label, id }) => {
+        {navigationItems.map(({ label, path }) => {
           return (
             <MenuItem
-              key={id}
+              key={path}
               label={label}
-              id={id}
+              path={path}
               hideSidebar={hideSidebar}
-              showContactForm={label === 'Contact' ? showContactForm : null}
+              showContactForm={label === "Contact" ? showContactForm : null}
             />
           );
         })}

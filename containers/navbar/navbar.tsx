@@ -1,13 +1,13 @@
-import styles from '../../styles/navbar.module.scss';
-import Image from 'next/image';
-import { useAnimation, useCycle, useViewportScroll } from 'framer-motion';
-import useMeasure from 'react-use-measure';
-import useWindowDimensions from '../../shared/customHooks/useWindowDimentions';
-import { motion } from 'framer-motion';
-import { MenuToggle } from './menuToggle';
-import Navigation from './navigation';
-import { useEffect, useState } from 'react';
-import { theme } from '../../styles/theme';
+import styles from "../../styles/navbar.module.scss";
+import Image from "next/image";
+import { useAnimation, useCycle, useViewportScroll } from "framer-motion";
+import useMeasure from "react-use-measure";
+import useWindowDimensions from "../../shared/customHooks/useWindowDimentions";
+import { motion } from "framer-motion";
+import { MenuToggle } from "./menuToggle";
+import Navigation from "./navigation";
+import { useEffect } from "react";
+import { theme } from "../../styles/theme";
 
 interface Props {
   showContactForm: () => void;
@@ -19,18 +19,18 @@ const megaMenu = {
     // background: 'rgba(255,255,255,1)',
     opacity: 1,
     transition: {
-      type: 'spring',
+      type: "spring",
       stiffness: 50,
       restDelta: 2,
     },
   }),
   closed: {
-    clipPath: 'circle(1px at 87% 50px)',
+    clipPath: "circle(1px at 87% 50px)",
     //background: 'rgba(255,255,255,1)',
     opacity: 0,
     transition: {
       delay: 0.1,
-      type: 'spring',
+      type: "spring",
       stiffness: 400,
       damping: 40,
     },
@@ -60,9 +60,9 @@ const Navbar = ({ showContactForm }: Props) => {
   useEffect(() => {
     scrollYProgress.onChange((v) => {
       if (scrollYProgress.getVelocity() < 0) {
-        navbarAnimationControl.start('visible');
+        navbarAnimationControl.start("visible");
       } else {
-        navbarAnimationControl.start('hidden');
+        navbarAnimationControl.start("hidden");
       }
     });
   }, [scrollYProgress]);
@@ -99,7 +99,7 @@ const Navbar = ({ showContactForm }: Props) => {
         </motion.button>
         <motion.nav
           initial={false}
-          animate={isOpen ? 'open' : 'closed'}
+          animate={isOpen ? "open" : "closed"}
           custom={height}
           ref={ref}
         >
@@ -107,7 +107,7 @@ const Navbar = ({ showContactForm }: Props) => {
             className={styles.modal}
             animate={{
               opacity: isOpen ? 1 : 0,
-              display: isOpen ? 'block' : 'none',
+              display: isOpen ? "block" : "none",
             }}
             onClick={() => toggleOpen()}
           />

@@ -1,11 +1,12 @@
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import styles from '../../styles/navbar.module.scss';
-import { theme } from '../../styles/theme';
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { useState } from "react";
+import styles from "../../styles/navbar.module.scss";
+import { theme } from "../../styles/theme";
 
 interface Props {
   label: string;
-  id: string;
+  path: string;
   hideSidebar: () => void;
   showContactForm?: () => void;
 }
@@ -28,7 +29,7 @@ const variants = {
   },
 };
 
-const MenuItem = ({ label, id, hideSidebar, showContactForm }: Props) => {
+const MenuItem = ({ label, path, hideSidebar, showContactForm }: Props) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const handleClick = () => {
@@ -37,36 +38,38 @@ const MenuItem = ({ label, id, hideSidebar, showContactForm }: Props) => {
   };
 
   return (
-    <motion.li
-      variants={variants}
-      className={styles.mega_menu__li}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={handleClick}
-    >
-      <a href={showContactForm ? null : `/#${id}`}>
-        {' '}
-        {label}{' '}
-        <motion.svg className={styles.mega_menu__liSVG}>
-          <motion.path
-            animate={{
-              pathLength: isHovered ? 1 : 0,
-              transition: {
-                duration: 0.3,
-              },
-            }}
-            d="M 0,0
+    <Link href={showContactForm ? "" : `/${path}`}>
+      <motion.li
+        variants={variants}
+        className={styles.mega_menu__li}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onClick={handleClick}
+      >
+        <>
+          {" "}
+          {label}{" "}
+          <motion.svg className={styles.mega_menu__liSVG}>
+            <motion.path
+              animate={{
+                pathLength: isHovered ? 1 : 0,
+                transition: {
+                  duration: 0.3,
+                },
+              }}
+              d="M 0,0
           L 500,0
           "
-            initial={{
-              pathLength: 0,
-            }}
-            stroke={theme.sidebarStroke}
-            strokeWidth="10px"
-          />
-        </motion.svg>
-      </a>
-    </motion.li>
+              initial={{
+                pathLength: 0,
+              }}
+              stroke={theme.sidebarStroke}
+              strokeWidth="10px"
+            />
+          </motion.svg>
+        </>
+      </motion.li>
+    </Link>
   );
 };
 

@@ -1,5 +1,6 @@
 import styles from "../../styles/post.module.scss";
 import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 
 interface Props {
   title: string;
@@ -14,7 +15,9 @@ const Post = ({ title, body, createdAt }: Props) => {
         <p className={styles.title}>{title}</p>
       </div>
       <div className={styles.body__container}>
-        <ReactMarkdown>{body}</ReactMarkdown>
+        <ReactMarkdown className={styles.markdown__container} plugins={[gfm]}>
+          {body}
+        </ReactMarkdown>
       </div>
     </div>
   );

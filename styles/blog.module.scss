@@ -1,0 +1,37 @@
+@import "./media_queries";
+
+.container {
+  padding-top: 70px;
+}
+
+.posts__container {
+  display: grid;
+  margin: auto;
+  margin-bottom: 100px;
+  max-width: 80%;
+
+  column-gap: 50px;
+  row-gap: 50px;
+
+  grid-template-columns: 1fr;
+  @include mquery(600) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mquery(1000) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include mquery(1600) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.title {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
